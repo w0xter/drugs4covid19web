@@ -11,12 +11,15 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
+    "d3": "^5.15.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
+    "react-d3-graph": "^2.4.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-scrollspy": "^3.4.2"
   },
   "scripts": {
     "start": "react-scripts start",

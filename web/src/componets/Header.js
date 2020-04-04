@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Scrollspy from 'react-scrollspy'
 export default function Header(){
     return(
-        <div id="top" className="navbar navbar-expand-lg blueBg header">
+        <div id="top" className="navbar navbar-expand-lg blueBg header sticky-top">
         <div className="d-flex flex-grow-1">
             <span className="w-100 d-lg-none d-block"></span>
             <a className="navbar-brand d-none d-lg-inline-block" href="#">
@@ -20,14 +20,17 @@ export default function Header(){
         <div className="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
             <ul className="navbar-nav ml-auto flex-nowrap">
             <li className="nav-item">
-                    <a className="nav-link m-2 menu-link active" href="/">Home <span className="sr-only">(current)</span></a>
+                    <a className="nav-link m-2 menu-link" href="#info">Introducción</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link m-2 menu-link " href="/new">Launch a Help Squad</a>
+                    <a className="nav-link m-2 menu-link " href="#problem">Problemas</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link m-2 menu-link " href="https://helpdao.org/" target="_blank">What is HelpDAO</a>
-                </li> 
+                    <a className="nav-link m-2 menu-link " href="#solution">Recursos</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link m-2 menu-link " href="#solution">Nuestro Enfoque</a>
+                </li>     
             </ul>
         </div>
     </div>

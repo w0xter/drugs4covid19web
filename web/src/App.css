@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@300;400;700&display=swap');
-
+body{
+  scroll-behavior: smooth;
+}
 .title{
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
@@ -17,6 +19,9 @@
 .blueBg{
   background-color: #a2d4e2!important;
 }
+.isCurrent{
+  color: red!important;
+}
 a{
   font-weight: 700;
 }
@@ -24,14 +29,21 @@ a{
   color: #ffffff!important;
 }
 .header a:hover{
-  /* color: #6d9ed6!important; */
   text-decoration: underline;
 
 }
-.header a.active{
+.fullCard{
+  height:'100%'!important;
+  min-height:'100%'!important;
+
+}
+hr.blue {
+  border: 1px solid #a2d4e2;
+}
+/* .header a.active{
   color:#ffffff!important;
   text-decoration: underline;
-}
+} */
 .App {
   text-align: center;
 }
@@ -41,7 +53,7 @@ a{
   pointer-events: none;
 }
 .fullScreenSection{
-  min-height: 100vh;
+  min-height: 90vh;
   height: 100%;
 }
 
