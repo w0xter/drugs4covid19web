@@ -29,7 +29,7 @@ export default function Header(){
                     <a className="nav-link m-2 menu-link " href="#solution">Recursos</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link m-2 menu-link " href="#solution">Nuestro Enfoque</a>
+                    <a className="nav-link m-2 menu-link " href="#approach">Nuestro Enfoque</a>
                 </li>     
             </ul>
         </div>
