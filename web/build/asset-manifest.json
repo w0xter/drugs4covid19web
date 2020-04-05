@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.23406676.chunk.css",
+    "main.js": "/static/js/main.f3a51f02.chunk.js",
+    "main.js.map": "/static/js/main.f3a51f02.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.314b3586.js",
+    "runtime-main.js.map": "/static/js/runtime-main.314b3586.js.map",
+    "static/css/2.de424728.chunk.css": "/static/css/2.de424728.chunk.css",
+    "static/js/2.b8e6de24.chunk.js": "/static/js/2.b8e6de24.chunk.js",
+    "static/js/2.b8e6de24.chunk.js.map": "/static/js/2.b8e6de24.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.6b1133d6f6a6f1ee4f7aa6f9de69c5fe.js": "/precache-manifest.6b1133d6f6a6f1ee4f7aa6f9de69c5fe.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/static/css/2.de424728.chunk.css.map",
+    "static/css/main.23406676.chunk.css.map": "/static/css/main.23406676.chunk.css.map",
+    "static/js/2.b8e6de24.chunk.js.LICENSE.txt": "/static/js/2.b8e6de24.chunk.js.LICENSE.txt",
+    "static/media/annotation.svg": "/static/media/annotation.2bf1faf6.svg",
+    "static/media/collecting.svg": "/static/media/collecting.a457acbb.svg",
+    "static/media/collecting.new.svg": "/static/media/collecting.new.9c5b1003.svg",
+    "static/media/detailed_analysis.svg": "/static/media/detailed_analysis.36330695.svg",
+    "static/media/detailed_analysis.new.svg": "/static/media/detailed_analysis.new.051a5c5c.svg",
+    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg",
+    "static/media/medical_research.svg": "/static/media/medical_research.fba35ee6.svg",
+    "static/media/medical_research.new.svg": "/static/media/medical_research.new.e507ee0f.svg",
+    "static/media/professor.svg": "/static/media/professor.c34907f3.svg",
+    "static/media/professor.new.svg": "/static/media/professor.new.84d78ec7.svg",
+    "static/media/report.svg": "/static/media/report.f9ffaeee.svg",
+    "static/media/report.new.svg": "/static/media/report.new.f2bb8c12.svg",
+    "static/media/reviewed_docs.svg": "/static/media/reviewed_docs.9899b647.svg",
+    "static/media/reviewed_docs.new.svg": "/static/media/reviewed_docs.new.951838fc.svg",
+    "static/media/yoHead.png": "/static/media/yoHead.3b9814dd.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.314b3586.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.b8e6de24.chunk.js",
+    "static/css/main.23406676.chunk.css",
+    "static/js/main.f3a51f02.chunk.js"
+  ]
+}

@@ -229,4 +229,31 @@ const approach = [
   source:'approach/report.svg'
 },
 ]
-export default {bar, pie, line, radar,donut, bubble, graph, graphConfig, approach}
+const spanish = {
+  info:{
+    title1:'DRUGS4COVID',
+    text1:'Queremos crear un catálogo de medicamentos usados para combatir el COVID-19, según la literatura científica, mediante el uso de técnicas de Inteligencia Artificial y Ciencia Ciudadana',
+    videoLink:'https://www.youtube.com/embed/1FnGkJtQJDY'
+  },
+  problems:{
+    title0:'Problemas',
+    title1:'Las reservas de medicamentos en los servicios de farmacia de los hospitales se están agotando',
+    text1:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus libero turpis, ut hendrerit erat pulvinar a. Vivamus lobortis varius lectus dapibus sollicitudin. Nulla purus est, accumsan ac libero a, vulputate laoreet mi. Quisque malesuada hendrerit turpis ut ornare. Donec vel ligula et quam mollis aliquam. Mauris congue et lacus eget consequat. Morbi arcu magna, vulputate ut tellus in, fringilla gravida erat. Duis consectetur a urna sit amet accumsan. Nulla dignissim justo sed ultrices gravida. Proin porttitor, metus eu fermentum tempus, orci arcu porta lectus, vitae rhoncus leo lorem in nisl.',
+    title2:'¿Cómo interactúan dos medicamentos que se están utilizando con pacientes?',
+    text2:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus libero turpis, ut hendrerit erat pulvinar a. Vivamus lobortis varius lectus dapibus sollicitudin. Nulla purus est, accumsan ac libero a, vulputate laoreet mi. Quisque malesuada hendrerit turpis ut ornare. Donec vel ligula et quam mollis aliquam. Mauris congue et lacus eget consequat. Morbi arcu magna, vulputate ut tellus in, fringilla gravida erat. Duis consectetur a urna sit amet accumsan. Nulla dignissim justo sed ultrices gravida. Proin porttitor, metus eu fermentum tempus, orci arcu porta lectus, vitae rhoncus leo lorem in nisl.'
+  }, 
+  resources:{
+    title0:'La solución se convierte en un nuevo problema',
+    title1:'CORD-19',
+    text1:'La gran riqueza de documentación científica supone al mismo tiempo un gran problema para su exploración. Si una persona desea conocer la aplicación o uso de un medicamento en el tratamiento del COVID-19, o de predecesores similares, o identificar las relaciones entre medicamentos descritos en un protocolo de actuación, debe navegar por este gran corpus de documentación donde los medicamentos aparecen mencionados con distintos nombres (nombre comercial, principio activo, grupo terapeútico), y en ocasiones la mención de un medicamento informa de su posible utilización y en otros casos puede tratarse de una frase sin relevancia para este objetivo.',
+    graphtitle1:'La nomenclatura de los medicamentos varía según el contexto.',
+    title2:'Algunos datos:',
+    graphtitle2:'Diferentes Idiomas.',
+    graphtitle3:'Muchas Fuentes entre las que consultar.',
+    graphtitle4:'Distintos Formatos.'
+  },
+  approach:{
+    title0:'Nuestro Enfoque'
+  }
+}
+export default {bar, pie, line, radar,donut, bubble, graph, graphConfig, approach, spanish}
