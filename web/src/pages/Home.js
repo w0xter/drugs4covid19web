@@ -44,7 +44,7 @@ export default function Home(){
                             </p>
                         </div>                        
                         <div className="col-xs-12 col-lg-6">                            
-                        <Line data={data.line}/>                       
+                        <Bar data={data.bar}/>                       
                         </div>
                     </div>
                     <div className="row">
@@ -72,17 +72,7 @@ export default function Home(){
                                 {text.resources.text1}
                         </p>  
                         </div>
-                        <div className="col-xs-12 col-lg-6">
-                            <Bubble data={data.bubble} options={{aspectRatio:1}}></Bubble>
-                            <h5 className="montserrat">
-                                {text.resources.graphtitle1}
-                            </h5>
-                        </div>                        
-                    </div>
-                    <div className="row">
-                        <div className="col-xs-10 col-lg-9 py-3 mx-auto">
-                        <hr className="blue"/>
-                        </div>
+                      
                     </div>
                     <div className="row-mt-5">
                         <div className="col-xs-12 col-lg-6 ">
@@ -92,24 +82,18 @@ export default function Home(){
                         </div>
                     </div>
                     <div className="row mt-5">
-                        <div className="col-xs-6 col-lg-4">
-                            <Pie data={data.pie}></Pie>
-                            <h5 className="montserrat mt-2">
-                                {text.resources.graphtitle2}
-                            </h5>
-                        </div>
-                        <div className="col-xs-6 col-lg-4">
-                        <Bar data={data.bar}></Bar>
-                            <h5 className="montserrat mt-2">
+                        <div className="col-xs-12 col-lg-6">
+                        <Line data={data.line}></Line>
+                            <h5 className="montserrat mt-2 text-center">
                             {text.resources.graphtitle3}
                             </h5>
                         </div>
-                        <div className="col-xs-6 col-lg-4">
-                            <Doughnut data={data.donut}></Doughnut>
-                            <h5 className="montserrat mt-2">
-                            {text.resources.graphtitle4}
+                        <div className="col-xs-12 col-lg-6">
+                            <Bubble data={data.bubble} options={{aspectRatio:1}}></Bubble>
+                            <h5 className="montserrat text-center">
+                                {text.resources.graphtitle1}
                             </h5>
-                        </div>                                                                      
+                        </div>                                                                                          
                     </div>
                 </section>
                 <section id="approach" className="fullScreenSection px-lg-5">
@@ -152,13 +136,13 @@ export default function Home(){
                             </div>
                         </div>
                         <div className="row h-100 mt-3">
-                            <div className="col-xs-12 col-lg-4 align-self-center">
+                            <div className="col-xs-12 col-lg-4 align-self-center text-center">
                                 <img src={images('./' + text.team.logo1)} alt="" className="img-fluid"/>
                             </div>
-                            <div className="col-xs-12 col-lg-4 align-self-center">
+                            <div className="col-xs-12 col-lg-4 align-self-center text-center">
                                 <img src={images('./' + text.team.logo2)} alt="" className="img-fluid"/>
                             </div>
-                            <div className="col-xs-12 col-lg-4 align-self-center">
+                            <div className="col-xs-12 col-lg-4 align-self-center text-center">
                                 <img src={images('./' + text.team.logo3)} alt="" className="img-fluid"/>
                             </div>                                                        
                         </div>
