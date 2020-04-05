@@ -18,6 +18,8 @@
     "react-chartjs-2": "^2.9.0",
     "react-d3-graph": "^2.4.1",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.9.0",
+    "react-markdown": "^4.3.1",
     "react-scripts": "3.4.1",
     "react-scrollspy": "^3.4.2"
   },

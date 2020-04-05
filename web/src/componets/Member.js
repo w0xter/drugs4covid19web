@@ -1,22 +1,50 @@
 import React from 'react'
-import LuisPozo from '../assets/teamImages/yoHead.png'
-export default function Member({data, gId}){
+import {FaGithub, FaTwitter, FaLinkedin} from 'react-icons/fa'
+import {MdEmail} from 'react-icons/md'
+const images = require.context('../assets/', true);
+
+export default function Member({data, gId}){ 
     return(
-        <div className={gId,"member"}>
-            <div className="row">
-                <div className="col-5 mx-auto">
-                    <img src={data.source} alt="" className="img-fluid rounded-circle"/>
-                </div>
+        <div>
+            <div className="row col-8 mx-auto tex-center">
+                <img src={images('./' + data.source)} alt="" className="img-fluid mx-auto rounded-circle"/>
             </div>
-            <div className="row">
-                <div className="col-5 mx-auto title">
-                    {data.name}
+            <h5 className="text-center oswald">
+                {data.name}
+            </h5>
+            <h6 className="text-center greyText montserrat">
+                {data.role} <span> </span>
+                {data.group.length !== 0 ? ( <span className="badge badge-primary">{data.group}</span>):''}
+            </h6>
+            <div className="row justify-content-center memberLink">
+                {data.twitter.length !== 0 ? (
+                <div className="col-1">
+                    <a target="_blank" href={"https://twitter.com/" + data.twitter}>
+                        <FaTwitter/>
+                    </a>
                 </div>
-            </div>
-            <div className="row">
-                <div className="col-5 mx-auto title">
-                    {data.role}
+                ):''}
+                {data.linkedin.length !== 0 ? (
+                <div className="col-1">
+                    <a target="_blank" href={data.linkedin}>
+                        <FaLinkedin/>
+                    </a>
                 </div>
+                ):''}
+                {data.github.length !== 0 ? (
+                <div className="col-1">
+                    <a target="_blank" href={"https://github.com/" + data.github}>
+                        <FaGithub/>
+                    </a>
+                </div>
+                ):''}
+                {data.email.length !== 0 ? (
+                <div className="col-1">
+                    <a target="_blank" href={"mailto:" + data.email}>
+                        <MdEmail/>
+                    </a>
+                </div>                 
+                ):''}                               
             </div>
         </div>
     )

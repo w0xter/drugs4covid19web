@@ -5,39 +5,14 @@ import Team from '../componets/Team'
 import { Bar,Bubble,Radar, Line, Pie, Doughnut} from 'react-chartjs-2';
 import Card from '../componets/Card'
 import data from '../assets/data/chartdata'
+const images = require.context('../assets/', true);
 export default function Home(){
-
-    let team = [
-                {
-                    name:'Luis Pozo',
-                    group:'0',
-                    role:'Web Developer', 
-                    source:'https://www.luispozo.es/image/yoHead.png'
-                },
-                {
-                    name:'Luis Pozo',
-                    group:'0',
-                    role:'Web Developer', 
-                    source:'https://www.luispozo.es/image/yoHead.png'
-                },
-                {
-                    name:'Luis Pozo',
-                    group:'0',
-                    role:'Web Developer', 
-                    source:'https://www.luispozo.es/image/yoHead.png'
-                },
-                {
-                    name:'Luis Pozo',
-                    group:'0',
-                    role:'Web Developer', 
-                    source:'https://www.luispozo.es/image/yoHead.png'
-                }
-            ]
-    let text = data.spanish
+    let text = data.languages[0]
     return(
         <Layout>
+            <span id="info"></span>
             <div className="container-fluid" data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-                <section id="info" className="p-lg-5">
+                <section id="" className="px-lg-5">
                 <div className="row mt-5">
                     <div className="col-xs-12 col-lg-6">
                         <h3 className="title text-left">{text.info.title1}</h3>
@@ -52,7 +27,8 @@ export default function Home(){
                     </div>
                 </div>
                 </section>
-                <section id="problem" className="fullScreenSection p-5">
+                <span id="problem"></span>
+                <section id="" className="fullScreenSection px-lg-5">
                     <div className="row mt-5">
                         <div className=" col-xs-12 col-lg-8">
                             <h3 className="title  text-left">{text.problems.title0}</h3>
@@ -76,24 +52,16 @@ export default function Home(){
                         <hr className="blue"/>
                         </div>
                     </div>                
-                    <div className="row mt-5 h-100">
-                        <div className="col-lg-6  align-self-center">
-                        <h4 className="subtitle text-left">
-                            {text.problems.title2}
-                        </h4>                           
-                        <p className="text-justify montserrat ">
-                            {text.problems.text2}
-                        </p>
-                        </div>
-                        <div className="col-xs-12 col-lg-6">                          
-                            <Radar data={data.radar}></Radar>                           
-                        </div>                        
-                    </div>
                 </section>
-                <section id="solution" className="fullScreenSection p-lg-5">
-                <h3 className="title text-left">
-                    {text.resources.title0}
-                </h3>
+                <span id="solution"></span>
+                <section id="" className="fullScreenSection px-lg-5">
+                    <div className="row mt-5">
+                        <div className="col-xs-12 col-lg-6">
+                        <h3 className="title text-left">
+                            {text.resources.title0}
+                        </h3>
+                        </div>
+                    </div>
 
                     <div className="row mt-5 h-100">
                         <div className="col-xs-12 col-lg-6 align-self-center">
@@ -144,8 +112,8 @@ export default function Home(){
                         </div>                                                                      
                     </div>
                 </section>
-                <section id="approach" className="fullScreenSection p-lg-5">
-                    <div className="row">
+                <section id="approach" className="fullScreenSection px-lg-5">
+                    <div className="row mt-5">
                         <div className="col-xs-12 col-lg-6">
                             <h3 className="text-left title">
                                 {text.approach.title0}
@@ -159,6 +127,42 @@ export default function Home(){
                         )
                     })}
                     </div>
+                </section>
+                <span id="team"></span>
+                <section id="" className="fullScreenSection px-lg-5 mb-5">
+                    <div className="row mt-5">
+                        <div className="col-xs-12 col-lg-6">
+                            <h3 className="title text-left">{text.team.title0}</h3>
+                        </div>
+                    </div>
+                    <div className="mt-5">
+                        <div className="row mt-5">
+                            <div className="col-xs-12 col-lg-6 text-left">
+                                <h4 className="title">{text.team.title1}</h4>
+                            </div>
+                        </div>
+                    <div className="mt-3">
+                        <Team team={data.teamData}></Team>
+                    </div>
+                    </div>
+                    <div className="mt-5">
+                        <div className="row">
+                            <div className="col-xs-12 col-lg-6 text-left">
+                                <h4 className="title">{text.team.title2}</h4>
+                            </div>
+                        </div>
+                        <div className="row h-100 mt-3">
+                            <div className="col-xs-12 col-lg-4 align-self-center">
+                                <img src={images('./' + text.team.logo1)} alt="" className="img-fluid"/>
+                            </div>
+                            <div className="col-xs-12 col-lg-4 align-self-center">
+                                <img src={images('./' + text.team.logo2)} alt="" className="img-fluid"/>
+                            </div>
+                            <div className="col-xs-12 col-lg-4 align-self-center">
+                                <img src={images('./' + text.team.logo3)} alt="" className="img-fluid"/>
+                            </div>                                                        
+                        </div>
+                    </div>                    
                 </section>
             </div>
         </Layout>

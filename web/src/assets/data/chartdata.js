@@ -232,20 +232,18 @@ const approach = [
 const spanish = {
   info:{
     title1:'DRUGS4COVID',
-    text1:'Queremos crear un catálogo de medicamentos usados para combatir el COVID-19, según la literatura científica, mediante el uso de técnicas de Inteligencia Artificial y Ciencia Ciudadana',
+    text1:'Queremos crear un catálogo de medicamentos usados para combatir la COVID-19, según la literatura científica, mediante el uso de técnicas de Inteligencia Artificial y Ciencia Ciudadana.',
     videoLink:'https://www.youtube.com/embed/1FnGkJtQJDY'
   },
   problems:{
     title0:'Problemas',
     title1:'Las reservas de medicamentos en los servicios de farmacia de los hospitales se están agotando',
-    text1:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus libero turpis, ut hendrerit erat pulvinar a. Vivamus lobortis varius lectus dapibus sollicitudin. Nulla purus est, accumsan ac libero a, vulputate laoreet mi. Quisque malesuada hendrerit turpis ut ornare. Donec vel ligula et quam mollis aliquam. Mauris congue et lacus eget consequat. Morbi arcu magna, vulputate ut tellus in, fringilla gravida erat. Duis consectetur a urna sit amet accumsan. Nulla dignissim justo sed ultrices gravida. Proin porttitor, metus eu fermentum tempus, orci arcu porta lectus, vitae rhoncus leo lorem in nisl.',
-    title2:'¿Cómo interactúan dos medicamentos que se están utilizando con pacientes?',
-    text2:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus libero turpis, ut hendrerit erat pulvinar a. Vivamus lobortis varius lectus dapibus sollicitudin. Nulla purus est, accumsan ac libero a, vulputate laoreet mi. Quisque malesuada hendrerit turpis ut ornare. Donec vel ligula et quam mollis aliquam. Mauris congue et lacus eget consequat. Morbi arcu magna, vulputate ut tellus in, fringilla gravida erat. Duis consectetur a urna sit amet accumsan. Nulla dignissim justo sed ultrices gravida. Proin porttitor, metus eu fermentum tempus, orci arcu porta lectus, vitae rhoncus leo lorem in nisl.'
+    text1:'Con el aumento del número de pacientes afectados por la COVID-19 e ingresados en las Unidades de Cuidados Intensivos en todo el mundo, se ha incrementado la demanda de los medicamentos necesarios para su tratamiento. Los laboratorios han aumentado la producción, y desde la propia Agencia del Medicamento recuerdan que un mismo principio activo puede encontrar en más de un nombre comercial.<br>Durante años, se ha generado una amplia cantidad de literatura científica una gran ayuda y, al mismo tiempo, un problema para su exploración.',
   }, 
   resources:{
     title0:'La solución se convierte en un nuevo problema',
     title1:'CORD-19',
-    text1:'La gran riqueza de documentación científica supone al mismo tiempo un gran problema para su exploración. Si una persona desea conocer la aplicación o uso de un medicamento en el tratamiento del COVID-19, o de predecesores similares, o identificar las relaciones entre medicamentos descritos en un protocolo de actuación, debe navegar por este gran corpus de documentación donde los medicamentos aparecen mencionados con distintos nombres (nombre comercial, principio activo, grupo terapeútico), y en ocasiones la mención de un medicamento informa de su posible utilización y en otros casos puede tratarse de una frase sin relevancia para este objetivo.',
+    text1:'Esta riqueza de documentación científica supone al mismo tiempo el problema. Si una persona desea conocer la aplicación o uso de un medicamento en el tratamiento de la COVID-19 o identificar las relaciones entre medicamentos descritos en un protocolo de actuación, debe navegar por este gran corpus de documentación donde los medicamentos aparecen mencionados con distintos nombres (principio activo, nombre comercial, grupo terapeútico…). En ocasiones la mención de un medicamento informa de su posible utilización y en otros casos puede tratarse de una frase sin relevancia para este objetivo.',
     graphtitle1:'La nomenclatura de los medicamentos varía según el contexto.',
     title2:'Algunos datos:',
     graphtitle2:'Diferentes Idiomas.',
@@ -254,6 +252,261 @@ const spanish = {
   },
   approach:{
     title0:'Nuestro Enfoque'
+  },
+  team:{
+    title0:'Quienes Somos'
   }
 }
-export default {bar, pie, line, radar,donut, bubble, graph, graphConfig, approach, spanish}
+const languages= [
+  {
+    info:{
+      title1:'DRUGS4COVID',
+      text1:'Queremos crear un catálogo de medicamentos usados para combatir la COVID-19, según la literatura científica, mediante el uso de técnicas de Inteligencia Artificial y Ciencia Ciudadana.',
+      videoLink:'https://www.youtube.com/embed/1FnGkJtQJDY'
+    },
+    problems:{
+      title0:'Problemas',
+      title1:'Las reservas de medicamentos en los servicios de farmacia de los hospitales se están agotando',
+      text1:'Con el aumento del número de pacientes afectados por la COVID-19 e ingresados en las Unidades de Cuidados Intensivos en todo el mundo, se ha incrementado la demanda de los medicamentos necesarios para su tratamiento. Los laboratorios han aumentado la producción, y desde la propia Agencia del Medicamento recuerdan que un mismo principio activo puede encontrar en más de un nombre comercial.<br>Durante años, se ha generado una amplia cantidad de literatura científica una gran ayuda y, al mismo tiempo, un problema para su exploración.',
+    }, 
+    resources:{
+      title0:'La solución se convierte en un nuevo problema',
+      title1:'CORD-19',
+      text1:'Esta riqueza de documentación científica supone al mismo tiempo el problema. Si una persona desea conocer la aplicación o uso de un medicamento en el tratamiento de la COVID-19 o identificar las relaciones entre medicamentos descritos en un protocolo de actuación, debe navegar por este gran corpus de documentación donde los medicamentos aparecen mencionados con distintos nombres (principio activo, nombre comercial, grupo terapeútico…). En ocasiones la mención de un medicamento informa de su posible utilización y en otros casos puede tratarse de una frase sin relevancia para este objetivo.',
+      graphtitle1:'La nomenclatura de los medicamentos varía según el contexto.',
+      title2:'Algunos datos:',
+      graphtitle2:'Diferentes Idiomas.',
+      graphtitle3:'Muchas Fuentes entre las que consultar.',
+      graphtitle4:'Distintos Formatos.'
+    },
+    approach:{
+      title0:'Nuestro Enfoque'
+    },
+    team:{
+      title0:'¿Quienes Somos?', 
+      title1:'El Equipo', 
+      title2:'Con la ayuda de:',
+      logo1:'logos/oeg.jpg', 
+      logo2:'logos/upm.png',
+      logo3:'logos/FacInformatica.jpg'
+    }
+  },
+  {
+    info:{
+      title1:'DRUGS4COVID',
+      text1:'We want to create a catalog of medicines used to combat COVID-19, according to scientific literature, through the use of Artificial Intelligence and Citizen Science techniques.',
+      videoLink:'https://www.youtube.com/embed/1FnGkJtQJDY'
+    },
+    problems:{
+      title0:'Problems',
+      title1:'Drugs in hospital pharmacy services are running low',
+      text1:'With the increase in the number of patients affected by COVID-19 and admitted to Intensive Care Units throughout the world, the demand for the medicines necessary for their treatment has increased. Laboratories have increased production, and the Drug Agency itself recalls that the same active ingredient can be found in more than one trade name.<br>For years, a large amount of scientific literature has been generated, a great help and a problem for its exploration too.',
+    }, 
+    resources:{
+      title0:'The solution becomes the problem',
+      title1:'CORD-19',
+      text1:'This scientific documentation is at the same time the problem. If a person wants to know the application or use of a drug in the treatment of COVID-19 or identify the relationships between drugs described in a protocol of action, they should navigate this large body of documentation where the drugs are mentioned with different names (active principle, trade name, therapeutic group... ). Sometimes the mention of a medicine informs about its possible use and in other cases it may be a phrase without relevance to this objective.',
+      graphtitle1:'La nomenclatura de los medicamentos varía según el contexto.',
+      title2:'Some Data:',
+      graphtitle2:'Differente languages',
+      graphtitle3:'Many sources to consult',
+      graphtitle4:'Different formats'
+    },
+    approach:{
+      title0:'Our Approach'
+    },
+    team:{
+      title0:'Who Are We?', 
+      title1:'The Team',
+      title2:'With the suppport of:',
+      logo1:'logos/oeg.jpg', 
+      logo2:'logos/upm.png',
+      logo3:'logos/FacInformatica.jpg'
+    }
+  }
+]
+const teamData = [
+  {
+    "source":"teamImages/Fotos/OscarCorcho.jpeg",
+    "name": "Oscar Corcho",
+    "role": "Promoter",
+    "group": "",
+    "Institución": "UPM",
+    "twitter": "ocorcho",
+    "github": "ocorcho",
+    "linkedin": "https://www.linkedin.com/in/ocorcho/",
+    "email": "ocorcho@fi.upm.es"
+  },
+  {
+    "source":"teamImages/Fotos/asuncion.jpg",
+    "name": "Asun Gómez-Pérez",
+    "role": "Promoter",
+    "group": "",
+    "Institución": "UPM",
+    "twitter": "asungomezperez",
+    "github": "",
+    "linkedin": "http://www.dia.fi.upm.es/es/asun",
+    "email": "asun@fi.upm.es"
+  },    
+  {
+    "source":"teamImages/Fotos/DavidChaves.jpg",
+    "name": "David Chaves",
+    "role": "Knowledge Engineer",
+    "group": "KG",
+    "Institución": "UPM",
+    "twitter": "dchaves",
+    "github": "dachafra",
+    "linkedin": "https://www.linkedin.com/in/david-chaves-fraga/",
+    "email": "dchaves@fi.upm.es"
+  },
+  {
+    "source":"teamImages/Fotos/CarlosBadenesOlmedo.png",
+    "name": "Carlos Badenes-Olmedo",
+    "role": "Product Owner",
+    "group": "NLP",
+    "Institución": "UPM",
+    "twitter": "carbadol",
+    "github": "cbadenes",
+    "linkedin": "https://www.linkedin.com/in/cbadenes",
+    "email": "cbadenes@fi.upm.es"
+  },
+  {
+    "source":"teamImages/Fotos/luisPozo.png",
+    "name": "Luis Pozo",
+    "role": "Web Developer",
+    "group": "Dev",
+    "Institución": "UPM",
+    "twitter": "LuispozoDev",
+    "github": "w0xter",
+    "linkedin": "https://www.linkedin.com/in/luis-pozo-472b6317a/",
+    "email": "luis.pozo@upm.es"
+  },
+  {
+    "source":"teamImages/Fotos/PatriciaMartínChozas.png",
+    "name": "Patricia Martín-Chozas",
+    "role": "Linguist",
+    "group": "NLP",
+    "Institución": "UPM",
+    "twitter": "pmchozas",
+    "github": "pmchozas",
+    "linkedin": "https://www.linkedin.com/in/pmchozas/",
+    "email": "pmchozas@fi.upm.es"
+  },
+
+  {
+    "source":"teamImages/Fotos/MariaPoveda.jpg",
+    "name": "María Poveda-Villalón",
+    "role": "Ontologist",
+    "group": "KG",
+    "Institución": "UPM",
+    "twitter": "MariaPovedaV",
+    "github": "mariapoveda",
+    "linkedin": "https://www.linkedin.com/in/mpovedavillalon",
+    "email": "mpoveda@fi.upm.es"
+  },
+  {
+    "source":"teamImages/Fotos/AlbaFernandez.png",
+    "name": "Alba Fernández-Izquierdo",
+    "role": "Ontologist",
+    "group": "KG",
+    "Institución": "UPM",
+    "twitter": "albafizq",
+    "github": "albaizq",
+    "linkedin": "https://www.linkedin.com/in/albafernandezizquierdo/",
+    "email": "albafernandez@fi.upm.es"
+  },
+  {
+    "source":"teamImages/Fotos/AnaIglesiasMolina.jpg",
+    "name": "Ana Iglesias-Molina",
+    "role": "Knowledge Engineer",
+    "group": "KG",
+    "Institución": "UPM",
+    "twitter": "_aieme",
+    "github": "anaigmo",
+    "linkedin": "https://www.linkedin.com/in/ana-iglesias-molina/",
+    "email": "ana.iglesiasm@upm.es"
+  },
+
+  {
+    "source":"teamImages/Fotos/PaolaEspinozaArias.jpg",
+    "name": "Paola Espinoza-Arias",
+    "role": "Ontologist",
+    "group": "KG",
+    "Institución": "UPM",
+    "twitter": "mijaspao",
+    "github": "paoespinozarias",
+    "linkedin": "https://www.linkedin.com/in/paolaespinoza-arias/",
+    "email": "pespinoza@fi.upm.es"
+  },
+  { "source":"teamImages/Fotos/PabloCallejaIbañez.jpg",
+    "name": "Pablo Calleja Ibáñez",
+    "role": "Computational Linguistic",
+    "group": "NLP",
+    "Institución": "UPM",
+    "twitter": "SPabloCalleja",
+    "github": "serpablo",
+    "linkedin": "https://www.linkedin.com/in/pablo-calleja-ib%C3%A1%C3%B1ez-63799064/",
+    "email": "pcalleja@fi.upm.es"
+  },
+  { "source":"teamImages/Fotos/VirginiadePablo.png",
+    "name": "Virginia de Pablo",
+    "role": "Comunicación",
+    "group": "",
+    "Institución": "UPM",
+    "twitter": "v_depablo",
+    "github": "",
+    "linkedin": "https://www.linkedin.com/in/vdepablo/",
+    "email": "vdepablo@fi-upm.es"
+  },
+  { "source":"teamImages/Fotos/DanielBermejoSánchez.jpg",
+    "name": "Daniel Bermejo Sánchez",
+    "role": "Back End Programmer",
+    "group": "Dev",
+    "Institución": "UPM",
+    "twitter": "",
+    "github": "",
+    "linkedin": "https://www.linkedin.com/in/daniel-bermejo-sánchez-020712160",
+    "email": "daniel.bermejos@alumnos.upm.es"
+  },
+  { "source":"teamImages/Fotos/ElviraAmador.JPG",
+    "name": "Elvira Amador Domínguez",
+    "role": "He hecho un poco de todo",
+    "group": "NLP",
+    "Institución": "UPM",
+    "twitter": "elviamador",
+    "github": "eamadord",
+    "linkedin": "https://www.linkedin.com/in/elvira-amador-dom%C3%ADnguez-746607116/",
+    "email": "eamador@fi.upm.es"
+  },
+  { "source":"teamImages/Fotos/EdnaRuckhaus.png",
+    "name": "Edna Ruckhaus Magnus",
+    "role": "Knowledge Graph exploitation",
+    "group": "KG",
+    "Institución": "UPM",
+    "twitter": "eruckhaus",
+    "github": "ednaru",
+    "linkedin": "https://www.linkedin.com/in/eruckhaus/",
+    "email": "eruckhaus@fi.upm.es"
+  },
+  { "source":"teamImages/Fotos/SocorroBernardos.png",
+    "name": "Socorro Bernardos Galindo",
+    "role": "Ayuda en ontología y consultas",
+    "group": "",
+    "Institución": "UPM",
+    "twitter": "",
+    "github": "",
+    "linkedin": "",
+    "email": ""
+  },
+  { "source":"teamImages/Fotos/EstebanGonzálezGuardia.jpeg",
+    "name": "Esteban González Guardia",
+    "role": "Frontend programmer",
+    "group": "CS (Citizen Science)",
+    "Institución": "UPM",
+    "twitter": "eglezguardia",
+    "github": "esgg",
+    "linkedin": "",
+    "email": "egonzalez@fi.upm.es"
+  }
+]
+export default {bar, pie, line, radar,donut, bubble, graph, graphConfig, approach, spanish, teamData, languages}
