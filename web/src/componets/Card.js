@@ -14,7 +14,7 @@ export default function Card({data}){
                 <button className="btn btn1 float-right" data-toggle="modal" data-target={"#modal-" + data.step}>¿Cómo funciona?</button>
             </div>
             <div class="modal fade" id={"modal-" + data.step} tabindex="-1" role="dialog" aria-labelledby={"modal-label-" + data.step} aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id={"modal-label-" + data.step}>{data.title}</h5>

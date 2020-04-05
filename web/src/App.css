@@ -1,23 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Oswald:wght@300;400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Oswald:wght@300;400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=Roboto:wght@300;400;500&display=swap');
 body{
   scroll-behavior: smooth;
 }
 .title{
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
 }
 .subtitle{
-  font-family: 'Oswald', sans-serif;
-  font-weight: 400;  
+  font-family: 'Archivo', sans-serif;
+  font-weight: 500;  
 }
 .oswald{
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Archivo', sans-serif;
 }
 .montserrat{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300!important;
 }
 .blueBg{
-  background-color: #a2d4e2!important;
+  background-color: #0A7AA3!important;
 }
 .whiteBg{
   background-color: #ffffff!important;
@@ -26,17 +28,17 @@ body{
   color: red!important;
 }
 .btn1{
-  background-color: #a2d4e2!important;
+  background-color: #0A7AA3!important;
   color: #ffffff!important;
-  font-family: 'Montserrat'!important;
+  font-family: 'Roboto'!important;
   font-weight: 500!important;
   transition: 0.5s;
 }
 .btn1:hover{
-  background-color: #779faa!important;
+  background-color: rgb(32, 158, 204)!important;
 }
 a{
-  font-weight: 700;
+  font-weight: 600;
 }
 .header a{
   color: #ffffff!important;
@@ -51,7 +53,7 @@ a{
 
 }
 hr.blue {
-  border: 1px solid #a2d4e2;
+  border: 1px solid #0A7AA3;
 }
 /* .header a.active{
   color:#ffffff!important;

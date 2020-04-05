@@ -58,8 +58,8 @@ export default function Home(){
                             <h3 className="title  text-left">{text.problems.title0}</h3>
                         </div>
                     </div>
-                    <div className="row mt-5">
-                    <div className="col-xs-12 col-lg-6 ">
+                    <div className="row mt-5 h-100">
+                    <div className="col-xs-12 col-lg-6 align-self-center">
                             <h4 className="subtitle text-left">
                                 {text.problems.title1}
                             </h4>
@@ -76,8 +76,8 @@ export default function Home(){
                         <hr className="blue"/>
                         </div>
                     </div>                
-                    <div className="row mt-5">
-                        <div className="col-lg-6  ">
+                    <div className="row mt-5 h-100">
+                        <div className="col-lg-6  align-self-center">
                         <h4 className="subtitle text-left">
                             {text.problems.title2}
                         </h4>                           
@@ -97,12 +97,8 @@ export default function Home(){
 
                     <div className="row mt-5 h-100">
                         <div className="col-xs-12 col-lg-6 align-self-center">
-                            <h5 className="montserrat text-left">
-                                <b>
-                                    <u>
-                                        {text.resources.title1}
-                                    </u>
-                                </b>
+                            <h5 className="subtitle text-left">
+                                {text.resources.title1}
                             </h5>
                             <p className="montserrat text-justify my-auto">
                                 {text.resources.text1}

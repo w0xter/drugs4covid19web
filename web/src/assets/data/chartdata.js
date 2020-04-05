@@ -3,7 +3,7 @@
     datasets: [
       {
         label: 'Suministros de Medicamentos',
-        backgroundColor: '#a2d4e2b0',
+        backgroundColor: '#0A7AA360',
         borderColor: '#60a5ff',
         borderWidth: 1,
         hoverBackgroundColor: 'rgba(255,99,132,0.4)',
@@ -17,11 +17,11 @@
     datasets: [
       {
         label: 'Fuentes de Datos',
-        backgroundColor: '#a2d4e2b0',
-        borderColor: '#60a5ff',
+        backgroundColor: '#0A7AA360',
+        borderColor: '#0A7AA3',
         borderWidth: 1,
-        hoverBackgroundColor: '#60a5ff',
-        hoverBorderColor: '#60a5ff',
+        hoverBackgroundColor: '#0A7AA3',
+        hoverBorderColor: '#0A7AA3',
         data: [24928, 52980,30000,0]
       }
     ]
@@ -40,7 +40,7 @@
       },
       {
         label: 'Medicamento 2',
-        backgroundColor: '#a2d4e2b0',
+        backgroundColor: '#0A7AA360',
         borderColor: '#60a5ff',
         pointBackgroundColor: '#60a5ff',
         pointBorderColor: '#fff',
@@ -208,7 +208,7 @@ const approach = [
         step:1,
         title:'Procesar', 
         content:'Procesar e indexar el corpus de artículos, y todas las frases.',
-        source:'approach/collecting.new.svg'
+        source:'approach/file_searching.svg'
     }, 
     {
       step:2,
@@ -226,7 +226,7 @@ const approach = [
   step:4,
   title:'Publicar', 
   content:'Publicar un grafo de conocimientos con los datos que sean correctos.',
-  source:'approach/report.svg'
+  source:'approach/kg.svg'
 },
 ]
 const spanish = {
