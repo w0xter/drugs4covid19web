@@ -571,7 +571,7 @@ const teamData = [
 "email": "jutande@fi.upm.es"
 },
 { "source":"teamImages/Fotos/MaydadePabloLlorente.png",
-"name": "Mayda de Pablo",
+"name": "Mayda de Pablo Llorente",
 "role": "Support",
 "group": "Support",
 "institution": "",
