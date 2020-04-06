@@ -24,20 +24,26 @@ export default function Header(){
         <div className="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
             <ul className="navbar-nav ml-auto flex-nowrap">
             <li className="nav-item">
-                    <a className="nav-link m-2 menu-link" href="#info">Introducción</a>
+                    <a className="nav-link m-2 menu-link" href="#info">Introduction</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link m-2 menu-link " href="#problem">Problemas</a>
+                    <a className="nav-link m-2 menu-link " href="#problem">Problems</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link m-2 menu-link " href="#solution">Recursos</a>
+                    <a className="nav-link m-2 menu-link " href="#solution">Resources</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link m-2 menu-link " href="#approach">Nuestro Enfoque</a>
+                    <a className="nav-link m-2 menu-link " href="#approach">Our Approach</a>
                 </li>     
                 <li className="nav-item">
-                    <a className="nav-link m-2 menu-link " href="#team">Quienes Somos</a>
-                </li>                   
+                    <a className="nav-link m-2 menu-link " href="#team">Who Are We?</a>
+                </li>
+                <li className="nav-item">
+                    {document.location.href.toString().slice(-2) !== 'EN'? (<a className="nav-link m-2 menu-link " href="/EN">English version</a>):(
+                        <a className="nav-link m-2 menu-link " href="/">Versión en Español</a>
+                    )
+                    }
+                </li>                                    
             </ul>
         </div>
     </div>
