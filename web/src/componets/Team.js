@@ -12,7 +12,7 @@ export default function Team({team}){
         <div className="teamSection row">
             {team.map((member) => {
                 return(
-                    <div className="col-xs-12 col-md-4 col-lg-2">
+                    <div className="col-xs-6 col-md-4 col-lg-3 py-2 align-self-center">
                         <Member data={member}></Member>
                     </div>
                 )
