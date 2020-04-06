@@ -1,3 +1,5 @@
+import { path } from "d3";
+
  const bar = {
     labels: ['TRANGOREX', 'DOLQUINE', 'TRANKIMAZIN', 'TRANKIMAZIN RETARD', 'MAXALT MAX', 'PARACETAMOL CINFA EFG', 'ADOFEN', 'NITRODERM TTS', 'DOLOCATIL CODEINA', 'ELECOR', ''],
 
@@ -510,7 +512,7 @@ const teamData = [
   },
   { "source":"teamImages/Fotos/ElviraAmador.JPG",
     "name": "Elvira Amador Domínguez",
-    "role": "He hecho un poco de todo",
+    "role": "Machine Learning Engineer",
     "group": "NLP",
     "institution": "UPM",
     "twitter": "elviamador",
@@ -548,7 +550,7 @@ const teamData = [
     "linkedin": "",
     "email": "egonzalez@fi.upm.es"
   },
-  { "source":"teamImages/Fotos/200.png",
+  { "source":"teamImages/Fotos/BeatrizLópezCenteno.jpg",
   "name": "Beatriz López Centeno",
   "role": "Hospital Pharmacist",
   "group": "",
@@ -557,6 +559,46 @@ const teamData = [
   "github": "",
   "linkedin": "https://www.linkedin.com/in/blopezcenteno/",
   "email": "blcenteno@salud.madrid.org"
+},
+{ "source":"teamImages/Fotos/JU_N.jpg",
+"name": "Juan Utande",
+"role": "Advisor",
+"group": "Support",
+"institution": "UPM",
+"twitter": "jutande",
+"github": "",
+"linkedin": "https://www.linkedin.com/in/juan-utande/",
+"email": "jutande@fi.upm.es"
+},
+{ "source":"teamImages/Fotos/MaydadePabloLlorente.png",
+"name": "Mayda de Pablo",
+"role": "Support",
+"group": "Support",
+"institution": "",
+"twitter": "maydadepablo",
+"github": "",
+"linkedin": "https://www.linkedin.com/in/maydadepablo/",
+"email": "mayda.depablo.llorente@alumnos.upm.es"
 }
 ]
-export default {bar, pie, line, radar,donut, bubble, graph, graphConfig, approach, teamData, languages}
+const navText = [
+  {
+    introduction:'Introduction',
+    problem:'Problem',
+    resources:'Resources',
+    approach:'Approach',
+    team:'Who Are We?',
+    btn:'ES',
+    path:'/'
+  },
+  {
+    introduction:'Introducción',
+    problem:'Problema',
+    resources:'Recursos',
+    approach:'Nuestro Enfoque',
+    team:'¿Quiénes Somos?',
+    btn:'EN',
+    path:'/EN'
+  }
+]
+export default {bar, pie, line, radar,donut, bubble, graph, graphConfig, approach, teamData, languages, navText}
