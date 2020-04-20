@@ -6,8 +6,15 @@ import { Bar,Bubble,Radar, Line, Pie, Doughnut} from 'react-chartjs-2';
 import Card from '../componets/Card'
 import data from '../assets/data/chartdata'
 const images = require.context('../assets/', true);
-export default function Home(){
-    let text = data.languages[1]
+export default function Home(props){
+    let lang = null
+    try{
+         lang = props.match.params.lang
+
+    }catch(err){
+        console.log(err)
+    }
+    let text = lang === 'EN'? data.languages[1]:data.languages[0]
     return(
         <Layout>
             <span id="info"></span>
@@ -105,7 +112,7 @@ export default function Home(){
                         </div>
                     </div>
                     <div className="card-deck mt-5">
-                    {text.approach.data.map((card) => {
+                    {data.approach.map((card) => {
                         return(
                                 <Card data={card}></Card>
                         )

@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-
+import CardTabs from './CardTabs'
 const images = require.context('../assets/', true);
 
 export default function Card({data}){
+    console.log(data.info)
     return(
         <div class="card fullCard">
             <img src={images('./'+data.source)} class="card-img-top img-fluid p-2"/>
@@ -26,8 +27,14 @@ export default function Card({data}){
                     </button>
                 </div>
                 <div class="modal-body  text-left">
-                <ReactMarkdown   escapeHtml={false} source={data.md}/>
-
+                {data.step !== 2 ? (<CardTabs 
+                motivation={data.info.motivation}
+                hypothesis={data.info.hypothesis}
+                problems={data.info.problems}
+                methodology={data.info.methodology}
+                results={data.info.results}
+                conclusions={data.info.conclusions}
+                />):''}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

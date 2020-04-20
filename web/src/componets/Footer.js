@@ -1,21 +1,14 @@
 import React from 'react'
-import logoMin from '../assets/logo.min.svg'
+import {Row, Col, Typography} from 'antd'
+import logo from '../assets/logo.svg'
 export default function Footer(){
     return(
-        <div className="blueBg">
-            <div className="container-fluid">
-            <div className="row h-100 py-1">
-                <div className="col-6">
-                    <h6 className="title my-auto text-white text-left">
-                        2020
-                    </h6>
-                </div>
-                <div className="col-6 text-left align-self-bottom">
-                    <h6 className="title text-white my-auto float-right">DRUGS4COVID19</h6>
-                </div>
-            </div>
-            </div>
-
+        <div className="mt-xs-3 mt-md-5" style={{background:'#0b81aa'}}>
+            <Row>
+                <Col>
+                    <img src={logo} alt="DRUGS4COVID" style={{ height: 50 }} className="img-fluid"/>
+                </Col>
+            </Row>
         </div>
     )
 }
