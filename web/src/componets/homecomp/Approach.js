@@ -15,7 +15,7 @@ export default function Approach(props){
         <div className="card-deck mt-5">
         {props.data.map((card) => {
             return(
-                    <Card data={card}></Card>
+                    <Card data={card} buttonText={props.text.text1}></Card>
             )
         })}
         </div>

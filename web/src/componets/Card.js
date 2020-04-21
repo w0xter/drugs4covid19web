@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import CardTabs from './CardTabs'
+import {Button} from 'antd'
 const images = require.context('../assets/', true);
 
-export default function Card({data}){
+export default function Card({data, buttonText}){
     console.log(data.info)
     return(
         <div class="card fullCard">
@@ -15,7 +16,7 @@ export default function Card({data}){
                 </div>
             </div>
             <div className="card-footer whiteBg">
-                <button className="btn btn1 float-right" data-toggle="modal" data-target={"#modal-" + data.step}>¿Cómo funciona?</button>
+            <Button type="primary" className="float-right" data-toggle="modal" data-target={"#modal-" + data.step}>{buttonText}</Button>
             </div>
             <div class="modal fade" id={"modal-" + data.step} tabindex="-1" role="dialog" aria-labelledby={"modal-label-" + data.step} aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
@@ -27,14 +28,14 @@ export default function Card({data}){
                     </button>
                 </div>
                 <div class="modal-body  text-left">
-                {data.step !== 2 ? (<CardTabs 
+                <CardTabs 
                 motivation={data.info.motivation}
                 hypothesis={data.info.hypothesis}
                 problems={data.info.problems}
                 methodology={data.info.methodology}
                 results={data.info.results}
                 conclusions={data.info.conclusions}
-                />):''}
+                />
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

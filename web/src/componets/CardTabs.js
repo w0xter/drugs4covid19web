@@ -11,8 +11,8 @@ const CustomList = ({data}) => {
 return(
     <div>
     { data.lists.map((list, idx) => {
-        const title = idx !== 0 ? list.title:''
-        let dataList = idx !== 0 ? list.data:list
+        const title = !Array.isArray(list) && Object.keys(list).includes('title') ? list.title:''
+        let dataList = Array.isArray(list) ? list:list.data
         return (
         <div className={idx !== 0? 'mt-3':''}>
         <List
@@ -24,9 +24,27 @@ return(
                     <List.Item>
                         {item.type === 'link' ?(
                             <a href={item.link} target="_blank">{item.text}</a>    
-                        ):(
+                        ):item.type === 'value' ?(
                         item.text
-                        )}
+                        ):item.type === 'image' ? (
+                            <Space direction="vertical">
+                            <Row justify="center">
+                            <Col className="text-center">
+                                <Text>{item.text}</Text>        
+                            </Col>
+                            </Row>  
+                            <Row justify="center">
+                                <Col className="text-center">
+                                    <img src={item.link} className="img-fluid" alt={item.text} style={{maxHeight:200}}/>
+                                </Col>
+                            </Row>   
+                            </Space>                       
+                        ):item.type === 'json' ?(
+                        <Text code>{item.text}</Text>
+                        ):item.type === 'title' ?(
+                            <Text strong>{item.text}</Text>
+                        ):''}
+                        
                     </List.Item>
                 )
         }}
@@ -104,6 +122,10 @@ export default class CardTabs extends React.Component{
                             <Paragraph>
                                 {this.state.conclusions.text}
                             </Paragraph>
+                        ):(Object.keys(this.state.conclusions).includes('lists') ?(
+                            <CustomList data={this.state.conclusions}>
+
+                            </CustomList>
                         ):(
                             <Row justify="center" align="middle" gutter={[16,16]}>
                                 {Object.keys(this.state.conclusions.statistics).map((key) => (
@@ -112,7 +134,7 @@ export default class CardTabs extends React.Component{
                                     </Col>
                                 ))}
                             </Row>
-                        )}
+                        ))}
                         </div>
                     ):''
                 }

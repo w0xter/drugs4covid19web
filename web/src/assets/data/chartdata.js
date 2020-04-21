@@ -268,7 +268,8 @@ const languages= [
       title2:'Algunos datos:',
     },
     approach:{
-      title0:'Nuestro Enfoque', 
+      title0:'Nuestro Enfoque',
+      text1:'¿Cómo funciona?',
       data:[
         {
             step:1,
@@ -335,30 +336,100 @@ const languages= [
           info:{
             motivation:{
               title:'Motivación',
-              text:'text'
+              text:'Agrupar medicamentos relacionados en el tratamiento del COVID para poder utilizarlos en situaciones de desabastecimiento.'
             },
             problems:{
               title:'Problemas',
               text:'text',
-              lists:[]
+              lists:[[
+                {type:'value', text:'Procesamiento masivo de Artículos científicos'},
+                {type:'value', text:'Identificación automática de medicamentos'},
+                {type:'value', text:'Identificación automática de síntomas'},
+                {type:'value', text:'Identificación automática de enfermedades'},
+                {type:'value', text:'Identificación automática de trastornos'},
+
+              ], {
+                title:'Descubrimiento de relaciones:',
+                data:[
+                  {type:'value', text:'Medicamento vs Síntoma'},
+                  {type:'value', text:'Medicamento vs Enfermedad'},
+                  {type:'value', text:'Medicamento vs Trastorno'},
+                ]
+              }]
 
             },
             hypothesis:{
               title:'Hipótesis',
-              text:'text'
+              text:'La caracterización de medicamentos mediante síntomas, enfermedades y trastornos extraídos automáticamente de la literatura científica permitirá agrupar aquellos que estén relacionados.'
             },
             methodology:{
               title:'Metodología',
-              list:[]
+              lists:[[
+                {type:'link', text:'Creación servicio identificación medicamentos y códigos ATC', link:'http://librairy.github.io/bio-nlp'},
+                {type:'value', text:'Desarrollo y ejecución de un anotador de enfermedades y medicamentos basado en modelos de identificación de entidades (NER). Anotación a dos niveles de profundidad: frase y artículo'},
+                {type:'value', text:'Construcción de modelos de agrupamiento global y jerárquico a partir de las representaciones de los medicamentos obtenidas con las anotaciones.'},
+              ], {
+                title:'Evaluación de los resultados obtenidos:',
+                data:[
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_2.png', text:'Para 100 Grupos (0.436208445103141)'},
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_3.png', text:'Para 110 Grupos (0.4494331459873356)'},
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_4.png', text:'Para 120 Grupos (0.4576435692957037)'},
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_5.png', text:'Para 130 Grupos (0.4553701275038375)'},
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_6.png', text:'Para 140 Grupos (0.46024923069398316)'}
+                ]
+              }]
             },
             results:{
               title:'Resultados',
-              lists:[]
+              lists:[{
+                title:'Anotaciones: 5.274.655 frases y 33.244 artículos',
+                data:[
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_diseases_t', text:'Enfermedades (scipacy_diseases_t)'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_problems_t', text:'Síntomas (annot_cliner_problems_t)'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_treatments_t', text:'Trastornos (annot_cliner_treatments_t)'},
+                  {type:'title', text:'Medicamentos:'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_chemicals_t', text:'sustancia química: (scispacy_chemicals_t)'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc5_t', text:'principio activo (bionlp_atc5_t)'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc4_t', text:'grupo terapeútico (bionlp_atc4_t)'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc3_t', text:'grupo químico (bionlp_atc3_t)'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc2_t', text:'grupo farmacológico (bionlp_atc2_t)'},
+                  {type:'json', text:'{"id": "03bf182b7a71278632ae83ed10757096dfdad3b7-175","text_t": "Furthermore, volunteer experiments demonstrate that astrovirus exposure generally leads to an increase in anti-astrovirus antibody titer.","scispacy_diseases_complete_t": "astrovirus:52:62","scispacy_diseases_t": "astrovirus","scispacy_chemicals_t": "anti-astrovirus","bionlp_atc2_t": "N04 D10","bionlp_atc3_t": "H05B N06D","bionlp_atc4_t": "L02BA N06DA H01CC D11AF N06DX","bionlp_atc5_t": "J06BB01","version": 1663037203902627840}'},
+                  {type:'image', text:'',link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/annotations-donut2.png'}
+
+                ]
+              }, 
+              {
+                title:'Distribución de los medicamentos a partir de las anotaciones',
+                data:[
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-bidimensional-latest.png', text:'En espacio bi-dimensional'},
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-dendrogram-latest.png', text:'Por niveles'}
+                  ]
+              }]
             },
             conclusions:{
               title:'Conclusiones',
-              statistics:[],
-              text:'text'
+              lists:[[
+                {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-cluster-latest.png',text:'Se han identificado 120 grupos de medicamentos de entre todos los mencionados en artículos publicados en CORD-19'},
+                {type:'value', text:'A partir de un medicamento, ya sea desde su nombre comercial, grupo farmacológico, terapeútico o principio activo, se pueden sugerir medicamentos relacionados.'},
+                {type:'value', text:'Se pueden realizar búsquedas basadas en enfermedades, síntomas, tratamientos o medicamentos de los artículos científicos publicados en CORD-19.'},
+                {type:'link',caption:'(Los medicamentos que combinan la actividad inmunosupresora y antimalárica tienen el principio activo P01BA02; los antibióticos macrólidos pertenecen al grupo terapeútico J01FA)' , link:'https://librairy.linkeddata.es/solr/covid/select?fl=url_s%2C%20name_s%2C%20scispacy_diseases_t&q=labels4_t%3AJ01FA%20AND%20labels5_t%3AP01BA02', text:'Por ejemplo, responder a la siguiente pregunta: ¿se han usado medicamentos que combinan actividad inmunosupresora y antimalárica con antibióticos macrólidos? ¿En qué documentos se mencionan, y relacionados con qué enfermedades?'},
+                {type:'image', link:'https://taiga.vencealvirus.software.imdea.org/media/attachments/7/4/2/c/88032427ea5df8abb15780aed503ade41f27500d1dbe735178f6f96e8986/diseaseschemicals-atcs2.png#_taiga-refresh=wiki_page:1361', text:'No todas las frases pertenecientes al corpus contienen entidades de relevancia, y en la gran mayoría solo aparece 1'},
+                {type:'value', text:'No se detallan suficientes relaciones entre entidades a nivel de frase. Otras tareas adicionales como la identificación de correferencias para trabajar a nivel de párrafo y generación de nuevos modelos para el corpus específico se contemplan como líneas futuras'}
+              ], {
+                title:'Medicamentos relacionados con el Aciclovir (J05AB01) en este contexto',
+                data:[
+                  {type:'value', link:'', text:'ketamine (N01AX03)'},
+                  {type:'value', link:'', text:'piperazine (P02CB01)'},
+                  {type:'value', link:'', text:'acefylline piperazine (R03DA09)'},
+                  {type:'value', link:'', text:'barium sulfate without suspending agents (V08BA02)'},
+                  {type:'value', link:'', text:'barium sulfate with suspending agents (V08BA01)'},
+                  {type:'value', link:'', text:'chlorhexidine (S01AX09, S03AA04, S02AA09, D09AA12, R02AA05, B05CA02, D08AC02, A01AB03)'},
+                  {type:'value', link:'', text:'chlorhexidine, combinations (D08AC52)'},
+                  {type:'value', link:'', text:'artesunate (P01BE03)'},
+                  {type:'value', link:'', text:'artesunate and pyronaridine (P01BF06)'},
+                  {type:'value', link:'', text:'amodiaquine (P01BA06)'}
+                ]
+              }]
             }
           
           }
@@ -511,7 +582,8 @@ const languages= [
       graphtext2:'The name of the medicine depends on the context.',            
     },
     approach:{
-      title0:'Our Approach', 
+      title0:'Our Approach',
+      text1:'How it works?',
       data:[
         {
             step:1,
@@ -551,41 +623,6 @@ const languages= [
         }, 
         {
           step:2,
-          title:'Clasificar', 
-          content:'Anotar cada artículo y cada frase con la información procesada.',
-          source:'approach/annotation.svg', 
-          info:{
-            motivation:{
-              title:'',
-              text:''
-            },
-            problems:{
-              title:'',
-              text:'',
-              lists:[]
-
-            },
-            hypothesis:{
-              title:'',
-              text:''
-            },
-            methodology:{
-              title:'',
-              lists:[]
-            },
-            results:{
-              title:'',
-              lists:[]
-            },
-            conclusions:{
-              title:'',
-              statistics:[],
-              text:''
-            }
-          
-          }        }, 
-        {
-          step:2,
           title:'Classify', 
           content:'Annotate each article and each sentence with the processed information.',
           source:'approach/annotation.svg', 
@@ -620,41 +657,6 @@ const languages= [
           
           }
       }, 
-      {
-        step:2,
-        title:'Clasificar', 
-        content:'Anotar cada artículo y cada frase con la información procesada.',
-        source:'approach/annotation.svg', 
-        info:{
-          motivation:{
-            title:'',
-            text:''
-          },
-          problems:{
-            title:'',
-            text:'',
-            lists:[]
-
-          },
-          hypothesis:{
-            title:'',
-            text:''
-          },
-          methodology:{
-            title:'',
-            lists:[]
-          },
-          results:{
-            title:'',
-            lists:[]
-          },
-          conclusions:{
-            title:'',
-            statistics:[],
-            text:''
-          }
-        
-        }      },
       {
         step:3,
         title:'Validate', 
@@ -692,42 +694,6 @@ const languages= [
         }
     }, 
     {
-      step:2,
-      title:'Clasificar', 
-      content:'Anotar cada artículo y cada frase con la información procesada.',
-      source:'approach/annotation.svg', 
-      info:{
-        motivation:{
-          title:'',
-          text:''
-        },
-        problems:{
-          title:'',
-          text:'',
-          lists:[]
-
-        },
-        hypothesis:{
-          title:'',
-          text:''
-        },
-        methodology:{
-          title:'',
-          lists:[]
-        },
-        results:{
-          title:'',
-          lists:[]
-        },
-        conclusions:{
-          title:'',
-          statistics:[],
-          text:''
-        }
-      
-      }    
-    },
-    {
       step:4,
       title:'Publish', 
       content:'Publish a knowledge graph with the valid data.',
@@ -762,42 +728,7 @@ const languages= [
         }
       
       }
-  }, 
-  {
-    step:2,
-    title:'Clasificar', 
-    content:'Anotar cada artículo y cada frase con la información procesada.',
-    source:'approach/annotation.svg', 
-    info:{
-      motivation:{
-        title:'',
-        text:''
-      },
-      problems:{
-        title:'',
-        text:'',
-        list:[]
-
-      },
-      hypothesis:{
-        title:'',
-        text:''
-      },
-      methodology:{
-        title:'',
-        list:[]
-      },
-      results:{
-        title:'',
-        list:[]
-      },
-      conclusions:{
-        title:'',
-        statistics:[],
-        text:''
-      }
-    
-    }    },
+  } 
     ]
     },
     team:{
