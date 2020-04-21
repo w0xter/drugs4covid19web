@@ -17,7 +17,7 @@ return(
         <div className={idx !== 0? 'mt-3':''}>
         <List
         bordered
-        header={title !== '' ? <Title level={4}>{title}</Title>:null}
+        header={title !== '' ? <Title type="secondary" level={4}>{title}</Title>:null}
         dataSource={dataList}
         renderItem={item =>{
                 return( 

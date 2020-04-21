@@ -1,5 +1,5 @@
 import React from 'react'
-import {GroupedColumnChart,BarChart, ColumnChart,LineChart, AreaChart, WordCloudChart} from '@opd/g2plot-react'
+import {GroupedColumnChart,BarChart, ColumnChart,LineChart, AreaChart, WordCloudChart, GaugeChart, OverlappedComboChart, StepLineChart} from '@opd/g2plot-react'
 
 export default function CustomChart(props){
     const chooseChart = () => {
@@ -16,6 +16,12 @@ export default function CustomChart(props){
                 return <ColumnChart {... props.data.config}/>
             case 'groupedcolumn':
                 return <GroupedColumnChart {... props.data.config}/>
+            case 'gauge':
+                    return <GaugeChart {... props.data.config}/>
+            case 'overlappedcombo':
+                return <OverlappedComboChart {... props.data.config}/>
+            case 'stepline':
+                return <StepLineChart {... props.data.config}/>
             default:
                 return <h1>ALGO VA MAL</h1>
 

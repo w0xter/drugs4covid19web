@@ -9,7 +9,7 @@ export default function Member({data, gId}){
         DEV:{tooltip:'Developers Group', color:'magenta'},
         NLP:{tooltip:'Natural Language Processing Group', color:'purple'},
         KG:{tooltip:'Knowledge Graph Creation Group', color:'volcano'},
-        Support:{tooltip:'Support Group', color:'green'},
+        Support:{tooltip:'Support and Advisory Group', color:'green'},
         CS:{tooltip:'Citizen Science Group', color:'cyan'}
     }
     const intstituions = {
@@ -17,6 +17,10 @@ export default function Member({data, gId}){
         SERMAS:'#d10002'
 
     }
+    const noSocialMedia = (data.linkedin.length === 0 && 
+                            data.github.length === 0 &&
+                            data.twitter.length === 0 &&
+                            data.email.length === 0 );
     return(
         <>
         <Row justify="center">
@@ -70,52 +74,13 @@ export default function Member({data, gId}){
                     <MailOutlined />
                     </a>
                 </Col>                 
+                ):''}
+                {noSocialMedia ? (
+                    <Col>
+                    <MailOutlined style={{opacity:0}} />
+                    </Col>
                 ):''} 
         </Row>        
         </>
-        // <div>
-        //     <div className="row col-8 mx-auto tex-center">
-        //         <img src={images('./' + data.source)} alt="" className="memberImg img-fluid mx-auto rounded-circle"/>
-        //     </div>
-        //     <h5 className="text-center oswald">
-        //         {data.name}
-        //         <span> </span>
-        //         {data.institution.length !== 0 ? (<small><span className="badge badge-info">{data.institution}</span> </small>):''}
-        //     </h5>
-        //     <h6 className="text-center greyText montserrat">
-        //         {data.role} <span> </span>
-        //         {data.group.length !== 0 ? ( <small><span className="badge badge-primary">{data.group}</span></small>):''}
-        //     </h6>
-        //     <div className="row justify-content-center memberLink">
-        //         {data.twitter.length !== 0 ? (
-        //         <div >
-        //             <a target="_blank" href={"https://twitter.com/" + data.twitter}>
-        //                 <FaTwitter/>
-        //             </a>
-        //         </div>
-        //         ):''}
-        //         {data.linkedin.length !== 0 ? (
-        //         <div className="col-1">
-        //             <a target="_blank" href={data.linkedin}>
-        //                 <FaLinkedin/>
-        //             </a>
-        //         </div>
-        //         ):''}
-        //         {data.github.length !== 0 ? (
-        //         <div className="col-1">
-        //             <a target="_blank" href={"https://github.com/" + data.github}>
-        //                 <FaGithub/>
-        //             </a>
-        //         </div>
-        //         ):''}
-        //         {data.email.length !== 0 ? (
-        //         <div className="col-1">
-        //             <a target="_blank" href={"mailto:" + data.email}>
-        //                 <MdEmail/>
-        //             </a>
-        //         </div>                 
-        //         ):''}                               
-        //     </div>
-        // </div>
     )
 }
