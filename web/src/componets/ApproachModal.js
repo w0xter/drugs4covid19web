@@ -18,7 +18,7 @@ return(
         <div className={idx !== 0? 'mt-3':''}>
         <List
         bordered
-        header={title !== '' ? <Title type="secondary" level={4}>{title}</Title>:null}
+        header={title !== '' ? <Text strong>{title}</Text>:null}
         dataSource={dataList}
         renderItem={item =>{
                 return( 
@@ -28,7 +28,8 @@ return(
                         ):item.type === 'value' ?(
                         item.text
                         ):item.type === 'image' ? (
-                            <Space direction="vertical"> 
+                            <Row justify="center">
+                            <Col className="text-center">
                             <Row justify="center">
                             <Col className="text-center">
                                 <Text strong style={{whiteSpace: "pre-line"}}>{item.text}</Text>        
@@ -36,15 +37,22 @@ return(
                             </Row>                              
                             <Row justify="center">
                                 <Col className="text-center">
-                                    <ImageModal image={item.link} title={item.text}/>
+                                    <img src={item.link}  className="img-fluid"  style={{maxWidth:'100%!important'}}alt=""/>
                                 </Col>
-                            </Row>                              
-                            </Space>                       
+                            </Row>
+                            </Col>                              
+                            </Row>                       
                         ):item.type === 'json' ?(
-                            <Space direction="vertical" size="small">
-                            <Text strong>{item.text}</Text>    
-                            <Paragraph code>{item.code}</Paragraph>
-                            </Space>
+                            <>
+                            <Row>
+                                <Col span={24}>
+                                <Text strong>{item.text}</Text>                                    
+                                </Col>
+                                <Col span={24}>
+                                <Text code>{item.code}</Text>
+                                </Col>
+                            </Row>                            
+                            </>
                         ):item.type === 'title' ?(
                             <Text strong>{item.text}</Text>
                         ):''}
@@ -56,6 +64,7 @@ return(
     </div>
     )})}
     </div>
+
 )
 }
 export default class CardTabs extends React.Component{
@@ -73,13 +82,13 @@ export default class CardTabs extends React.Component{
     }
     render(){
         return(
-            <div className="py-3">
+            <div className="py-3" style={{maxWidth:'100!important'}}>
             <Space direction="vertical" size="large">
                 <div>
                 <Title level={3}>
                     {this.state.motivation.title}
                 </Title>
-                <Paragraph>
+                <Paragraph className="text-justify">
                     {this.state.motivation.text}
                 </Paragraph>
                 </div>
@@ -90,7 +99,7 @@ export default class CardTabs extends React.Component{
                 {Object.keys(this.state.problems).includes('lists') ? (
                     <CustomList data={this.state.problems}/>
                 ):(
-                    <Paragraph>
+                    <Paragraph className="text-justify">
                         {this.state.problems.text}
                     </Paragraph>
                 )}
@@ -99,7 +108,7 @@ export default class CardTabs extends React.Component{
                 <Title level={3}>
                     {this.state.hypothesis.title}
                 </Title>
-                <Paragraph>
+                <Paragraph className="text-justify">
                     {this.state.hypothesis.text}
                 </Paragraph>
                 </div>
@@ -123,7 +132,7 @@ export default class CardTabs extends React.Component{
                         </Title>
 
                         {Object.keys(this.state.conclusions).includes('text') ?(
-                            <Paragraph>
+                            <Paragraph className="text-justify">
                                 {this.state.conclusions.text}
                             </Paragraph>
                         ):(Object.keys(this.state.conclusions).includes('lists') ?(
