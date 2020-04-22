@@ -1,53 +1,86 @@
 import React from 'react'
-import {FaGithub, FaTwitter, FaLinkedin} from 'react-icons/fa'
-import {MdEmail} from 'react-icons/md'
+import {TwitterOutlined, LinkedinFilled, GithubOutlined, MailOutlined} from '@ant-design/icons'
+import {Row, Col, Avatar,Tooltip, Typography, Tag} from 'antd'
 const images = require.context('../assets/', true);
 
-export default function Member({data, gId}){ 
+const {Text} = Typography
+export default function Member({data, gId}){
+    const groups = {
+        DEV:{tooltip:'Developers Group', color:'magenta'},
+        NLP:{tooltip:'Natural Language Processing Group', color:'purple'},
+        KG:{tooltip:'Knowledge Graph Creation Group', color:'volcano'},
+        Support:{tooltip:'Support and Advisory Group', color:'green'},
+        CS:{tooltip:'Citizen Science Group', color:'cyan'}
+    }
+    const intstituions = {
+        UPM:'#1f82c0',
+        SERMAS:'#d10002'
+
+    }
+    const noSocialMedia = (data.linkedin.length === 0 && 
+                            data.github.length === 0 &&
+                            data.twitter.length === 0 &&
+                            data.email.length === 0 );
     return(
-        <div>
-            <div className="row col-8 mx-auto tex-center">
-                <img src={images('./' + data.source)} alt="" className="img-fluid mx-auto rounded-circle"/>
-            </div>
-            <h5 className="text-center oswald">
-                {data.name}
-                <span> </span>
-                {data.institution.length !== 0 ? (<small><span className="badge badge-info">{data.institution}</span> </small>):''}
-            </h5>
-            <h6 className="text-center greyText montserrat">
-                {data.role} <span> </span>
-                {data.group.length !== 0 ? ( <small><span className="badge badge-primary">{data.group}</span></small>):''}
-            </h6>
-            <div className="row justify-content-center memberLink">
-                {data.twitter.length !== 0 ? (
-                <div className="col-1">
+        <>
+        <Row justify="center">
+            <Col>
+                <Avatar size={150} src={images('./' + data.source)}></Avatar>
+            </Col>
+        </Row>
+        <Row justify="center">
+            <Col className="text-center">
+                <Text strong>{data.name}</Text>
+            </Col>
+        </Row>        
+        <Row justify="center" className="mt-1">
+                <Col className="">
+                    <Tooltip title={groups[data.group].tooltip}>
+                        <Tag color={groups[data.group].color}>{data.group}</Tag>
+                    </Tooltip>
+                </Col>
+                { data.institution.length !== 0 ?(
+                <Col className="">
+                    <Tag color={intstituions[data.institution]}>{data.institution}</Tag>
+                </Col>
+                ):''
+                }
+        </Row>        
+        <Row justify="center" gutter={[8,8]}>
+            {data.twitter.length !== 0 ? (
+                <Col >
                     <a target="_blank" href={"https://twitter.com/" + data.twitter}>
-                        <FaTwitter/>
+                    <TwitterOutlined />
                     </a>
-                </div>
+                </Col>
                 ):''}
                 {data.linkedin.length !== 0 ? (
-                <div className="col-1">
+                <Col >
                     <a target="_blank" href={data.linkedin}>
-                        <FaLinkedin/>
+                    <LinkedinFilled />
                     </a>
-                </div>
+                </Col>
                 ):''}
                 {data.github.length !== 0 ? (
-                <div className="col-1">
+                <Col >
                     <a target="_blank" href={"https://github.com/" + data.github}>
-                        <FaGithub/>
+                    <GithubOutlined />
                     </a>
-                </div>
+                </Col>
                 ):''}
                 {data.email.length !== 0 ? (
-                <div className="col-1">
+                <Col >
                     <a target="_blank" href={"mailto:" + data.email}>
-                        <MdEmail/>
+                    <MailOutlined />
                     </a>
-                </div>                 
-                ):''}                               
-            </div>
-        </div>
+                </Col>                 
+                ):''}
+                {noSocialMedia ? (
+                    <Col>
+                    <MailOutlined style={{opacity:0}} />
+                    </Col>
+                ):''} 
+        </Row>        
+        </>
     )
 }

@@ -1,7 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Oswald:wght@300;400;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=Roboto:wght@300;400;500&display=swap');
 body{
-  scroll-behavior: smooth;
+  scroll-behavior: smooth!important;
 }
 .title{
   font-family: 'Archivo', sans-serif!important;
@@ -31,6 +31,10 @@ h1,h2,h3,h4,h5,h6{
 .memberLink a:hover {
   color: rgb(32, 158, 204)!important;
 }
+.memberImg{
+	max-height:'100px';
+	max-width:'100px';
+}
 .whiteBg{
   background-color: #ffffff!important;
 }
@@ -55,16 +59,7 @@ h1,h2,h3,h4,h5,h6{
 .btn1:hover{
   background-color: rgb(32, 158, 204)!important;
 }
-a{
-  font-weight: 600;
-}
-.header a{
-  color: #ffffff!important;
-}
-.header a:hover{
-  text-decoration: underline;
 
-}
 .fullCard{
   height:'100%'!important;
   min-height:'100%'!important;

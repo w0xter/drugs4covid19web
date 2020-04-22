@@ -1,69 +1,78 @@
 import React from 'react'
 import Scrollspy from 'react-scrollspy'
-import {Link} from 'react-router-dom'
 import data from '../assets/data/chartdata'
 import logo from '../assets/logo.svg'
 import logoMin from '../assets/logo.min.svg'
 import {MdMenu} from 'react-icons/md'
+import {Menu, Button, Tooltip, Affix, Anchor, Row, Col} from 'antd'
+import {Link} from 'react-scroll'
+import {MenuOutlined} from '@ant-design/icons'
+
 const text = document.location.href.toString().slice(-2) !== 'EN' ? data.navText[1]:data.navText[0]
 export default class Header extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            text:document.location.href.toString().slice(-2) !== 'EN' ? data.navText[1]:data.navText[0]
+            text:document.location.href.toString().slice(-2) !== 'EN' ? data.navText[1]:data.navText[0],
+            collapsed:true,
+            activeKey:'introduction'
         }
+        this.handleSetActive = this.handleSetActive.bind(this)
     }
-    changeText(lan){
-        let newText = lan !== 'EN' ? data.navText[1]:data.navText[0]
-        this.setState(newText)
-    }
-    render(){
-    return(
-        <div id="top" className="navbar navbar-expand-lg blueBg header sticky-top">
-        <div className="d-flex flex-grow-1">
-            <span className="w-100 d-lg-none d-block"></span>
-            <a className="navbar-brand d-none d-lg-inline-block" href="#">
-                <img src={logoMin} className="img-fluid" alt=""/>
-            </a>
-            <a className="navbar-brand-two mx-auto d-lg-none d-inline-block" href="#">
-                <img src={logoMin} class="img-fluid" alt=""/>
-            </a>
-            <div className="w-100 text-right">
-                <button className="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#myNavbar">
-                   <MdMenu></MdMenu>
-                </button>
-            </div>
-        </div>
-        <div className="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
-            <ul className="navbar-nav ml-auto flex-nowrap">
-            <li className="nav-item">
-                <a className="nav-link m-2 menu-link" href="#info">{this.state.text.introduction}</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link m-2 menu-link " href="#problem">{this.state.text.problem}</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link m-2 menu-link " href="#solution">{this.state.text.resources}</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link m-2 menu-link " href="#approach">{this.state.text.approach}</a>
-                </li>     
-                <li className="nav-item">
-                    <a className="nav-link m-2 menu-link " href="#team">{this.state.text.team}</a>
-                </li>
-                <li className="nav-item">
-                        <Link to={this.state.text.path}>
-                            <a className="nav-link m-2 menu-link ">
-                               <button onClik={() => this.changeText(this.state.text.btn)}className="btn btn-outline-light btn-sm">
-                               {this.state.text.btn}
-                               </button>
-                            </a>
-                        </Link>
-                </li>                                    
-            </ul>
-        </div>
-    </div>
+    changeLang(){
+        //let newText = this.state.text.lang !== 'EN' ? data.navText[1]:data.navText[0]
+        //this.setState(newText)
+        document.location.href=`/lang/${this.state.text.lang}`
 
+    }
+    handleSetActive(key){
+        console.log("ESSTAMOS EN:")
+        console.log(key)
+        this.setState({activeKey:key})
+    }    
+    render(){
+        let menuLinks = Object.keys(this.state.text)
+        const index = menuLinks.indexOf('lang');
+        if (index > -1) {
+            menuLinks.splice(index, 1);
+        }
+    
+    return(
+        <Affix>
+        <Row gutter={[16,16]} style={{background:'#fff'}}>
+            <Col md={10}>
+            <img src={logo} className="img-fluid d-inline-block align-top" alt="" style={{ height: 50 }}/>
+            </Col>
+            <Col xs={2} md={14}>
+            <Menu selectedKeys={[this.state.activeKey]} mode="horizontal" style={{ borderBottom: 'none'}} overflowedIndicator={<MenuOutlined />}>  
+            {
+                menuLinks.map((key) => (
+                    <Menu.Item key={key} >
+                        <Link activeClass="active"
+                        spy={true}
+                        hashSpy={true}
+                        smooth={true}
+                        duration={500}
+                        to={key}
+                        onSetActive={this.handleSetActive}
+                        >
+                            {this.state.text[key]}
+                        </Link>
+                    </Menu.Item>  
+                ))
+            }        
+            <Menu.Item className="Item" key="lang">
+                <Tooltip title={"Translate to " + this.state.text.lang}>
+                <Button type="secondary" onClick={() => this.changeLang()}>
+                    {this.state.text.lang}
+                </Button>
+                </Tooltip>
+            </Menu.Item>              
+            </Menu>
+
+            </Col>
+        </Row>                 
+        </Affix>
     )
 }
 

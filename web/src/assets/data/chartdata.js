@@ -1,4 +1,3 @@
-import { path } from "d3";
 
  const bar = {
     labels: ['TRANGOREX', 'DOLQUINE', 'TRANKIMAZIN', 'TRANKIMAZIN RETARD', 'MAXALT MAX', 'PARACETAMOL CINFA EFG', 'ADOFEN', 'NITRODERM TTS', 'DOLOCATIL CODEINA', 'ELECOR', ''],
@@ -15,20 +14,28 @@ import { path } from "d3";
       }
     ]
   };
- const line = {
-    labels: ['1970', '1971', '1972', '1973', '1974', '1975', '1976', '1977', '1978', '1979', '1980', '1981', '1982', '1983', '1984', '1985', '1986', '1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
-    datasets: [
-      {
-        label: 'Number of Articles per year',
-        backgroundColor: '#0A7AA360',
-        borderColor: '#0A7AA3',
-        borderWidth: 1,
-        hoverBackgroundColor: '#0A7AA3',
-        hoverBorderColor: '#0A7AA3',
-        data: [6, 1, 4, 10, 6, 12, 17, 23, 25, 30, 29, 51, 39, 54, 57, 73, 88, 104, 116, 110, 115, 149, 142, 129, 122, 146, 107, 102, 106, 102, 116, 171, 154, 407, 905, 961, 1079, 1163, 1318, 1492, 1573, 1764, 1859, 2071, 2232, 2438, 2588, 2592, 2822, 2919, 2478]
-      }
-    ]
-  }; const radar = {
+  const  MedicineStock = {
+    values:[{'Medicine': 'TRANGOREX', 'nº Centers': 3205}, {'Medicine': 'DOLQUINE', 'nº Centers': 2846}, {'Medicine': 'TRANKIMAZIN', 'nº Centers': 2032}, {'Medicine': 'TRANKIMAZIN RETARD', 'nº Centers': 2979}, {'Medicine': 'MAXALT MAX', 'nº Centers': 1820}, {'Medicine': 'PARACETAMOL CINFA EFG', 'nº Centers': 1436}, {'Medicine': 'ADOFEN', 'nº Centers': 1432}, {'Medicine': 'NITRODERM TTS', 'nº Centers': 1031}, {'Medicine': 'DOLOCATIL CODEINA', 'nº Centers': 1887}, {'Medicine': 'ELECOR', 'nº Centers': 1643}],
+    xField:'Medicine',
+    yField:'nº Centers',
+    xAxis:{
+      label: {
+        visible: false,
+        autoRotate: true,
+        autoHide: true
+    }
+    }
+  }
+  const ArticlesPerYear = {
+  values:[{'year': '1970', 'value': 6}, {'year': '1971', 'value': 1}, {'year': '1972', 'value': 4}, {'year': '1973', 'value': 10}, {'year': '1974', 'value': 6}, {'year': '1975', 'value': 12}, {'year': '1976', 'value': 17}, {'year': '1977', 'value': 23}, {'year': '1978', 'value': 25}, {'year': '1979', 'value': 30}, {'year': '1980', 'value': 29}, {'year': '1981', 'value': 51}, {'year': '1982', 'value': 39}, {'year': '1983', 'value': 54}, {'year': '1984', 'value': 57}, {'year': '1985', 'value': 73}, {'year': '1986', 'value': 88}, {'year': '1987', 'value': 104}, {'year': '1988', 'value': 116}, {'year': '1989', 'value': 110}, {'year': '1990', 'value': 115}, {'year': '1991', 'value': 149}, {'year': '1992', 'value': 142}, {'year': '1993', 'value': 129}, {'year': '1994', 'value': 122}, {'year': '1995', 'value': 146}, {'year': '1996', 'value': 107}, {'year': '1997', 'value': 102}, {'year': '1998', 'value': 106}, {'year': '1999', 'value': 102}, {'year': '2000', 'value': 116}, {'year': '2001', 'value': 171}, {'year': '2002', 'value': 154}, {'year': '2003', 'value': 407}, {'year': '2004', 'value': 905}, {'year': '2005', 'value': 961}, {'year': '2006', 'value': 1079}, {'year': '2007', 'value': 1163}, {'year': '2008', 'value': 1318}, {'year': '2009', 'value': 1492}, {'year': '2010', 'value': 1573}, {'year': '2011', 'value': 1764}, {'year': '2012', 'value': 1859}, {'year': '2013', 'value': 2071}, {'year': '2014', 'value': 2232}, {'year': '2015', 'value': 2438}, {'year': '2016', 'value': 2588}, {'year': '2017', 'value': 2592}, {'year': '2018', 'value': 2822}, {'year': '2019', 'value': 2919}, {'year': '2020', 'value': 2478}],
+  xField:'year',
+  yField:'value',
+  xAxis:{
+    type: 'time',
+    tickCount: 20,
+    mask: 'YYYY',        },
+  }; 
+const radar = {
     labels: ['Efecto1', 'Efecto2', 'Efecto3', 'Efecto4', 'Efecto5', 'Efecto6', 'Efecto7'],
     datasets: [
       {
@@ -96,7 +103,32 @@ import { path } from "d3";
         '#a2666f'
         ]
     }]
-}; 
+};
+const List = {
+  title:'Lopinavir + Ritonavir',
+  items:[
+    {
+      title:'Active principie',
+      description:'Lopinavir + Ritonavir'
+    },{
+      title:'ATC code',
+      description:'J05AR10'
+    },
+    {
+      title:'Trade name',
+      description: 'KALETRA 100 mg/25 mg'
+    },
+    {
+      title:'Trade name',
+      description: 'LOPINAVIR/RITONAVIR ACCORD 200 MG/ 50 MG'
+    },
+    {
+      title:'Trade name',
+      description: 'LOPINAVIR/RITONAVIR RANBAXY 100 MG/25 MG'
+    }           
+  ]
+
+}
 const bubble = {
 labels: ['January'],
 datasets: [
@@ -206,37 +238,7 @@ const graphConfig = {
         highlightColor: "lightblue",
     },
 };
-const approach = [
-    {
-        step:1,
-        title:'Procesar', 
-        content:'Procesar e indexar el corpus de artículos, y todas las frases.',
-        source:'approach/file_searching.svg', 
-        md:"# MOTIVACIÓN\nFacilitar el procesamiento automático de las publicaciones científicas disponibles en el corpus CORD-19.\n# PROBLEMAS\nEl corpus se distribuye en varias colecciones de documentos comprimidas (formato GZ) y un archivo con metainformación (formato CSV).\n# HIPÓTESIS\nAlmacenar los artículos en repositorios orientados a documentos permitirá que puedan ser procesados y anotados automáticamente mediante su interfaz de acceso HTTP.\n# METODOLOGÍA\n1. Descarga corpus CORD-19 (\npages.semanticscholar.org/coronavirus-research\n)\n1. Descarga metadatos en formato CSV\n2. Descarga artículos de la colección 'Commercial use subset' (16763 artículos en formato JSON)\n3. Descarga artículos de la colección 'Non-commercial use subset ' (4228 artículos en formato JSON)\n4. Descarga artículos de la colección 'Custom license subset ' (19171 artículos en formato JSON)\n5. Descarga artículos de la colección 'bioRxiv/medRxiv subset' (500 artículos en formato JSON)\n2. Creación índice en Solr para almacenar los artículos\n3. Desarrollo código Python para lectura de artículos y registro en índice en Solr\n4. Segmentación de artículos en frases\n5. Creación índice en Solr para almacenar los frases\n6. Desarrollo código Python para extracción de frases a partir del texto de los artículos y registro en índice en Solr\n7. Creación de visualizaciones estadísticas para la exploración de los artículos\n# RESULTADOS\n1. Repositorio de documentos: [librairy.linkeddata.es/data/#/covid/core-overview](http://librairy.linkeddata.es/data/#/covid/core-overview)\n2. Repositorio de frases: [librairy.linkeddata.es/data/#/covid-sentences/core-overview](http://librairy.linkeddata.es/data/#/covid-sentences/core-overview)\n3. Visualización Repositorio (código GIST 4f726911fd9908ffc3a46837b15d8011): [librairy.linkeddata.es/data/dashboard](https://librairy.linkeddata.es/data/dashboard)\n4. Exploración guiada por artículos relacionados a partir de su contenido y sus anotaciones: [librairy.github.io/covid19/explorer.html](https://librairy.github.io/covid19/explorer.html)\n5. Código Python indexado: [github.com/librairy/covid19/blob/master/parallel-index-articles.py](https://github.com/librairy/covid19/blob/master/parallel-index-articles.py)\n# CONCLUSIONES\n1. 33.244 artículos indexados\n2. 5.298.063 frases extraídas automáticamente"
-    }, 
-    {
-      step:2,
-      title:'Clasificar', 
-      content:'Anotar cada artículo y cada frase con la información procesada.',
-      source:'approach/annotation.svg', 
-      md:'# MOTIVACIÓN\n Agrupar medicamentos relacionados en el tratamiento del COVID para poder utilizarlos en situaciones de desabastecimiento ([noticia prensa](https://elpais.com/sociedad/2020-03-31/las-uci-recurren-a-farmacos-en-desuso-ante-la-escasez-de-sedantes.html))\n # PROBLEMAS\n 1. Procesamiento masivo de Artículos científicos\n2. Identificación automática de medicamentos\n3. Identificación automática de síntomas\n4. Identificación automática de enfermedades\n5. Identificación automática de trastornos\n6. Descubrimiento de relaciones:\n1. medicamento-vs-síntoma\n2. medicamento-vs-enfermedad\n3. medicamento-vs-trastorno\n # HIPÓTESIS\n La caracterización de medicamentos mediante síntomas, enfermedades y trastornos extraídos automáticamente de la literatura científica permitirá agrupar aquellos que estén relacionados.\n # METODOLOGÍA\n 1. Creación servicio identificación medicamentos y códigos ATC: [librairy.github.io/bio-nlp](http://librairy.github.io/bio-nlp)\n2. Desarrollo y ejecución de un anotador de enfermedades y medicamentos basado en modelos de identificación de entidades (NER). Anotación a dos niveles de profundidad: frase y artículo\n3. Construcción de modelos de agrupamiento global y jerárquico a partir de las representaciones de los medicamentos obtenidas con las anotaciones.\n4. Evaluación de los resultados obtenidos:\n4.1 Para 100 Grupos (0.436208445103141):\n![silouette2](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_2.png)\n4.2 Para 110 Grupos (0.4494331459873356):\n![silouette3](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_3.png)\n4.3 Para 120 Grupos (0.4576435692957037):\n![silouette4](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_4.png)\n4.4 Para 130 Grupos (0.4553701275038375):\n![silouette5](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_5.png)\n4.5 Para 140 Grupos (0.46024923069398316):\n![silouette6](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_6.png)\n5. Extracción de conocimiento a partir de los grupos de medicamentos obtenidos.\n # RESULTADOS\n 1. Anotaciones: 5.274.655 frases y 33.244 artículos\n1.1 Enfermedades (**scipacy_diseases_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_diseases_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_diseases_t)\n1.2 Síntomas (**annot_cliner_problems_t**): [librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_problems_t](http://librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_problems_t)\n1.3 Trastornos (**annot_cliner_treatments_t**): [librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_treatments_t](http://librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_treatments_t)\n1.4 Medicamentos\n1.4.1 sustancia química: (**scispacy_chemicals_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_chemicals_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_chemicals_t)\n1.4.2 principio activo (**bionlp_atc5_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc5_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc5_t)\n1.4.3 grupo terapeútico (**bionlp_atc4_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc4_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc4_t)\n1.4.4 grupo químico (**bionlp_atc3_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc3_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc3_t)\n1.2.5 grupo farmacológico (**bionlp_atc2_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc2_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc2_t)\n *{\n"id": "03bf182b7a71278632ae83ed10757096dfdad3b7-175",\n"text_t": "Furthermore, volunteer experiments demonstrate that astrovirus exposure generally leads to an increase in anti-astrovirus antibody titer.",\n"scispacy_diseases_complete_t": "astrovirus:52:62",\n"scispacy_diseases_t": "astrovirus",\n"scispacy_chemicals_t": "anti-astrovirus",\n"bionlp_atc2_t": "N04 D10",\n"bionlp_atc3_t": "H05B N06D",\n"bionlp_atc4_t": "L02BA N06DA H01CC D11AF N06DX",\n"bionlp_atc5_t": "J06BB01",\n"\*version\*": 1663037203902627840\n}*\n![annotations](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/annotations-donut2.png)\n 2. Distribución de los medicamentos a partir de las anotaciones:\n2.1 En espacio bi-dimensional:\n![bidimensional](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-bidimensional-latest.png)\n2.2. Por niveles:\n![dendrogram](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-dendrogram-latest.png)\n # CONCLUSIONES\n - Se han identificado 120 grupos de medicamentos de entre todos los mencionados en artículos publicados en CORD-19:\n![clustering](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-cluster-latest.png)\n- A partir de un medicamento, ya sea desde su nombre comercial, grupo farmacológico, terapeútico o principio activo, se pueden sugerir **medicamentos relacionados**.\nPor ejemplo, medicamentos relacionados con el Aciclovir (J05AB01) en este contexto son:\n- ketamine (N01AX03)\n- piperazine (P02CB01)\n- acefylline piperazine (R03DA09)\n- barium sulfate without suspending agents (V08BA02)\n- barium sulfate with suspending agents (V08BA01)\n- chlorhexidine (S01AX09, S03AA04, S02AA09, D09AA12, R02AA05, B05CA02, D08AC02, A01AB03)\n- chlorhexidine, combinations (D08AC52)\n- artesunate (P01BE03)\n- artesunate and pyronaridine (P01BF06)\n- amodiaquine (P01BA06)\n- Se pueden realizar **búsquedas basadas en enfermedades, síntomas, tratamientos o medicamentos** de los artículos científicos publicados en CORD-19.\nPor ejemplo, responder a la siguiente pregunta: ¿se han usado medicamentos que combinan actividad inmunosupresora y antimalárica con antibióticos macrólidos? ¿En qué documentos se mencionan, y relacionados con qué enfermedades? mediante la consulta: [librairy.linkeddata.es/solr/covid/select?fl=url_s, name_s, scispacy_diseases_t&q=labels4_t:J01FA AND labels5_t:P01BA02](https://librairy.linkeddata.es/solr/covid/select?fl=url_s%2C name_s%2C scispacy_diseases_t&q=labels4_t%3AJ01FA AND labels5_t%3AP01BA02) (ya que los medicamentos que combinan la actividad inmunosupresora y antimalárica tienen el principio activo P01BA02; los antibióticos macrólidos pertenecen al grupo terapeútico J01FA)\n- No todas las frases pertenecientes al corpus contienen entidades de relevancia, y en la gran mayoría solo aparece 1![Diseases,Chemicals, atcs2.png](https://taiga.vencealvirus.software.imdea.org/media/attachments/7/4/2/c/88032427ea5df8abb15780aed503ade41f27500d1dbe735178f6f96e8986/diseaseschemicals-atcs2.png#_taiga-refresh=wiki_page:1361)\n- No se detallan suficientes relaciones entre entidades a nivel de frase. Otras tareas adicionales como la identificación de correferencias para trabajar a nivel de párrafo y generación de nuevos modelos para el corpus específico se contemplan como líneas futuras'
-  },
-  {
-    step:3,
-    title:'Validar', 
-    content:'Revisar estas anotaciones con la ayuda de científicos ciudadanos.',
-    source:'approach/medical_research.svg', 
-    md:'# MOTIVACIÓN\n Validar las frases extraídas de los artículos que tratan sobre el COVID-19 por ciudadanos con formación y conocimientos en Ciencias de la Salud.\n # PROBLEMAS\n Las palabras clave relacionadas con la enfermedad (síntomas, medicamentos, enfermedades y tratamientos) pueden aparecer en las frases en diferente orden y con un significado distinto, por lo que es difícil una interpretación automática.\n # HIPÓTESIS\n El conocimiento e interpretación de los ciudadanos con formación y conocimientos en Ciencias de la Salud será clave para validar las frases extraídas de los artículos científicos que realiza el procesamiento automático.\n # METODOLOGÍA\n 1. Se construirá un experimento de ciencia ciudadana, a modo de aplicación web, que permita a los usuarios con formción y conocimientos en ciencias de la salud validar las frases extraídas por el sistema de Inteligencia Artificial.\n2. Los datos de entrada del experimento serán las frases extraídas del procesamiento automático [(#1 corpus)](https://taiga.vencealvirus.software.imdea.org/project/ocorcho-salud-un-catalogo-de-medicamentos-usados-para-combatir-el-covid-19-segun-la-literatura-cientifica-y-aplicando-tecnicas-de-inteligencia-artificial-y-ciencia-ciudadana/wiki/1-corpus).\n3. En cumplimiento de la GDPR, se informará al usuario sobre cómo se van a tratar sus datos personales, derecho a creación de perfiles automáticos y derecho al borrado cuando el usuario lo estime adecuado. Además, los datos permanecerán en servidores debidamente securizados.\n4. Todos los datos en bruto ¿del experimento? se publicarán en abierto, anonimizando previamente el identificador del usuario.\n5. La aplicación permitirá:\n - Registrar usuarios y clasificarlos según perfil (médicos de familia, enfermeros, epidemiólogos, farmacéuticos, …). Dicha clasificación se realizará mediante la realización de un tutorial.\n- Se mostrará al usuario una frase extraída del corpus y marcará en ella los síntomas, medicamentos y posibles tratamientos. Ejemplo: [oeg-upm.github.io/drugs4covid19-cs](https://oeg-upm.github.io/drugs4covid19-cs/)\n- La aplicación registrará cada una de las palabras o grupos de palabras marcadas por los usuarios.\n- Los datos validados se enviarán a una API para su almacenamiento en una base de datos.\n- Se calculará un índice de confianza para cada usuario, basado en "gold standards" (tareas previamente validadas por los expertos).  \n\n # RESULTADOS\n - Conjunto y clasificación de los medicamentos adecuados para la enfermedad.\n- Conjunto y clasificación de los síntomas de la enfermedad.\n- Relación síntomas-medicamentos extraídos de las frases.\n- Relación medicamento-medicamento.\n- Relación medicamento-enfermedad.'
 
-},
-{
-  step:4,
-  title:'Publicar', 
-  content:'Publicar un grafo de conocimientos con los datos que sean correctos.',
-  source:'approach/kg.svg',
-  md:'# MOTIVACIÓN\n A partir del Corpus corpus CORD-19, un corpus actualizado de artículos científicos sobre COVID-19 se han generado varios repositorios orientados a documentos que pueden ser procesados y anotados automáticamente mediante su interfaz de acceso HTTP. El repositorio generado de frases de estos artículos contiene anotaciones acerca de enfermedades, síntomas y trastornos y tratamientos (códigos ATC) relacionados con el COVID-19. Actualmente existen diferentes repositorios de datos relacionados con estos aspectos que contienen una descripción detallada de atributos tales como todos los nombres con los que se conoce una medicina, efectos secundarios, entre otros. Se quiere entonces extender las anotaciones generadas inicialmente con aquellas generadas por este tipo de relaciones. Para que la información pueda ser explotada por tanto por personas vinculadas al ámbito sanitario como por el público en general, es necesario que las anotaciones estén alineadas a un vocabulario que describa este dominio del conocimiento. De esta manera, el repositorio original será transformado a un grafo de conocimiento (knowledge graph) mediante técnicas que trabajan con mappings (correspondencias) entre el repositorio de frases y el vocabulario desarrollado.\n # PROBLEMAS\n - Silos de información\n  - Fuentes de datos heterogéneas\n  - Diversidad de formatos y métodos de consulta\n  - Carencia de vocabularios consensuados\n # HIPÓTESIS\n Un punto de acceso único y unificado en forma de grafo permite recuperar información sobre los medicamentos y sus interacciones de forma más efectiva para los expertos.\n # METODOLOGÍA\n 1. Búsqueda y generación de fuentes de datos\n - Index solar 1\n  - Index solar 2\n 1. Búsqueda de fuentes de conocimiento relacionadas a enfermedades, síntomas y trastornos, tratamientos.\n  2. Explorar otros repositorios semánticos que han sido generados a partir de información de COVID-19 para ver la posibilidad de relacionar los grafos de conocimiento\n  3. Generación del vocabulario con reuso de ontologías asociadas a esas fuentes\n  4. Documentación y publicación del vocabulario\n  5. Mapeo de los datos al vocabulario\n  6. Generación del grafo de conocimiento alineado con vocabulario\n  7. Enriquecimiento del grafo con validaciones de expertos (ciencia ciudadana)\n  8. Publicación del grafo de conocimiento\n # RESULTADOS\n - Vocabulario [w3id.org/def/DRUGS4COVID19](https://w3id.org/def/DRUGS4COVID19)\n  - Knowledge graph: [github.com/oeg-upm/drugs4covid19-kg](https://github.com/oeg-upm/drugs4covid19-kg)\n  - Punto de consulta: [librairy.linkeddata.es/sparql](http://librairy.linkeddata.es/sparql)\n  - [Ejemplo de consulta](https://librairy.linkeddata.es/sparql?default-graph-uri=http%3A%2F%2Fdrugs4covid.com%2F542020&query=select+distinct+*+where+%7B%0D%0A%0D%0A%3Fs+a+%3Chttps%3A%2F%2Fw3id.org%2Fdef%2FDRUGS4COVID19%23Paper%3E.%0D%0A%3Fs+%3Chttps%3A%2F%2Fw3id.org%2Fdef%2FDRUGS4COVID19%2Fmenciona%3E+%3Fa+.%0D%0A%3Fa+%3Fp+%3Ft+.%0D%0A%0D%0A%7D+limit+10&should-sponge=&format=text%2Fhtml&timeout=0&debug=on&run=+Run+Query+)\n  # CONCLUSIONES\n Hemos integrado de forma estructurada la información sacada de las artículos científicos, sus anotaciones y además la hemos enriquecido con enlaces útiles para los expertos a fuentes externas. De esta manera, esta fuente de información única se puede utilizar para responder preguntas de forma rápida y sencilla.'
-},
-]
 const languages= [
   {
     info:{
@@ -248,49 +250,297 @@ const languages= [
       title0:'Problema',
       title1:'Las reservas de medicamentos en los servicios de farmacia de los hospitales se están agotando',
       text1:'Con el aumento del número de pacientes afectados por la COVID-19 e ingresados en las Unidades de Cuidados Intensivos en todo el mundo, se ha incrementado la demanda de los medicamentos necesarios para su tratamiento. Los laboratorios han aumentado la producción, y desde la propia Agencia del Medicamento recuerdan que un mismo principio activo puede encontrar en más de un nombre comercial.\nDurante años, se ha generado una amplia cantidad de literatura científica una gran ayuda y, al mismo tiempo, un problema para su exploración.',
+      graph1:{
+        title:'Farmacias sin Stock de cierto medicamento',
+        subtitle:'Número de farmacias sin stock de un medicamento específico desde 3-23-2020 hsata 3-29-2020'
+      }
     }, 
     resources:{
       title0:'La solución se convierte en un nuevo problema',
       title1:'CORD-19',
       text1:'Esta riqueza de documentación científica supone al mismo tiempo el problema. Si una persona desea conocer la aplicación o uso de un medicamento en el tratamiento de la COVID-19 o identificar las relaciones entre medicamentos descritos en un protocolo de actuación, debe navegar por este gran corpus de documentación donde los medicamentos aparecen mencionados con distintos nombres (principio activo, nombre comercial, grupo terapeútico…). En ocasiones la mención de un medicamento informa de su posible utilización y en otros casos puede tratarse de una frase sin relevancia para este objetivo.',
-      graphtitle1:'La nomenclatura de los medicamentos varía según el contexto.',
+      graph1:{
+        title:'Artículos por año',
+        subtitle:'Numero de publicaciones desde 1976 hasta febrero de 2020',
+      },
+      graphtext1:'Muchas Fuentes entre las que consultar.',
+      graphtext2:'La nomenclatura de los medicamentos varía según el contexto.',
       title2:'Algunos datos:',
-      graphtitle2:'Diferentes Idiomas.',
-      graphtitle3:'Muchas Fuentes entre las que consultar.',
-      graphtitle4:'Distintos Formatos.'
     },
     approach:{
-      title0:'Nuestro Enfoque', 
+      title0:'Nuestro Enfoque',
+      text1:'¿Cómo funciona?',
       data:[
         {
             step:1,
             title:'Procesar', 
             content:'Procesar e indexar el corpus de artículos, y todas las frases.',
-            source:'approach/file_searching.svg', 
-            md:"# MOTIVACIÓN\nFacilitar el procesamiento automático de las publicaciones científicas disponibles en el corpus CORD-19.\n# PROBLEMAS\nEl corpus se distribuye en varias colecciones de documentos comprimidas (formato GZ) y un archivo con metainformación (formato CSV).\n# HIPÓTESIS\nAlmacenar los artículos en repositorios orientados a documentos permitirá que puedan ser procesados y anotados automáticamente mediante su interfaz de acceso HTTP.\n# METODOLOGÍA\n1. Descarga corpus CORD-19 (\npages.semanticscholar.org/coronavirus-research\n)\n1. Descarga metadatos en formato CSV\n2. Descarga artículos de la colección 'Commercial use subset' (16763 artículos en formato JSON)\n3. Descarga artículos de la colección 'Non-commercial use subset ' (4228 artículos en formato JSON)\n4. Descarga artículos de la colección 'Custom license subset ' (19171 artículos en formato JSON)\n5. Descarga artículos de la colección 'bioRxiv/medRxiv subset' (500 artículos en formato JSON)\n2. Creación índice en Solr para almacenar los artículos\n3. Desarrollo código Python para lectura de artículos y registro en índice en Solr\n4. Segmentación de artículos en frases\n5. Creación índice en Solr para almacenar los frases\n6. Desarrollo código Python para extracción de frases a partir del texto de los artículos y registro en índice en Solr\n7. Creación de visualizaciones estadísticas para la exploración de los artículos\n# RESULTADOS\n1. Repositorio de documentos: [librairy.linkeddata.es/data/#/covid/core-overview](http://librairy.linkeddata.es/data/#/covid/core-overview)\n2. Repositorio de frases: [librairy.linkeddata.es/data/#/covid-sentences/core-overview](http://librairy.linkeddata.es/data/#/covid-sentences/core-overview)\n3. Visualización Repositorio (código GIST 4f726911fd9908ffc3a46837b15d8011): [librairy.linkeddata.es/data/dashboard](https://librairy.linkeddata.es/data/dashboard)\n4. Exploración guiada por artículos relacionados a partir de su contenido y sus anotaciones: [librairy.github.io/covid19/explorer.html](https://librairy.github.io/covid19/explorer.html)\n5. Código Python indexado: [github.com/librairy/covid19/blob/master/parallel-index-articles.py](https://github.com/librairy/covid19/blob/master/parallel-index-articles.py)\n# CONCLUSIONES\n1. 33.244 artículos indexados\n2. 5.298.063 frases extraídas automáticamente"
+            source:'approach/file_searching.svg',
+            info:{
+              motivation:{
+                title:'Motivación',
+                text:'Facilitar el procesamiento automático de las publicaciones científicas disponibles en el corpus CORD-19.'
+              },
+              problems:{
+                title:'Problemas',
+                text:'El corpus se distribuye en varias colecciones de documentos comprimidas (formato GZ) y un archivo con metainformación (formato CSV).'
+              },
+              hypothesis:{
+                title:'Hipótesis',
+                text:'Almacenar los artículos en repositorios orientados a documentos permitirá que puedan ser procesados y anotados automáticamente mediante su interfaz de acceso HTTP.'
+              },
+              methodology:{
+                title:'Metodología',
+                lists:[[
+                  {type:'link', link:'https://pages.semanticscholar.org/coronavirus-research', text:'Descargar corpus CORD-19'},
+                  {type:'value', text:'Descargar metadatos en formato CSV'},
+                  {type:'value', text:"Descargar artículos de la colección 'Commercial use subset' (16763 artículos en formato JSON)"},
+                  {type:'value', text:"Descargar artículos de la colección 'Non-commercial use subset ' (4228 artículos en formato JSON)"},
+                  {type:'value', text:"Descargar artículos de la colección 'Custom license subset ' (19171 artículos en formato JSON)"},
+                  {type:'value', text:"Descargar artículos de la colección 'bioRxiv/medRxiv subset' (500 artículos en formato JSON)"},
+                  {type:'value', text:"Creación índice en Solr para almacenar los artículos"},
+                  {type:'value', text:"Desarrollo código Python para lectura de artículos y registro en índice en Solr"},
+                  {type:'value', text:"Segmentación de artículos en frases"},
+                  {type:'value', text:"Creación índice en Solr para almacenar los frases"},
+                  {type:'value', text:"Desarrollo código Python para extracción de frases a partir del texto de los artículos y registro en índice en Solr"},
+                  {type:'value', text:"Creación de visualizaciones estadísticas para la exploración de los artículos"},
+
+                ]]
+              },
+              results:{
+                title:'Resultados',
+                lists:[[
+                  {type:'link', text:"Repositorio de documentos" , link:'http://librairy.linkeddata.es/data/#/covid/core-overview'},
+                  {type:'link', text:"Repositorio de frases", link:'http://librairy.linkeddata.es/data/#/covid-sentences/core-overview'},
+                  {type:'link', text:"Visualización Repositorio (código GIST 4f726911fd9908ffc3a46837b15d8011)", link:'https://librairy.linkeddata.es/data/dashboard'},
+                  {type:'link', text:"Exploración guiada por artículos relacionados a partir de su contenido y sus anotaciones", link:'https://librairy.github.io/covid19/explorer.html'},
+                  {type:'link', text:"Código de Python para el indexado", link:'https://github.com/librairy/covid19/blob/master/parallel-index-articles.py'},
+
+                ]]
+              },
+              conclusions:{
+                title:'Conclusiones',
+                statistics:{
+                  'Artículos Indexados':'33244',
+                  'Frases Extraídas Automáticamente':'5298063'
+                }
+              }
+            
+            }
         }, 
         {
           step:2,
           title:'Clasificar', 
           content:'Anotar cada artículo y cada frase con la información procesada.',
           source:'approach/annotation.svg', 
-          md:'# MOTIVACIÓN\n Agrupar medicamentos relacionados en el tratamiento del COVID para poder utilizarlos en situaciones de desabastecimiento ([noticia prensa](https://elpais.com/sociedad/2020-03-31/las-uci-recurren-a-farmacos-en-desuso-ante-la-escasez-de-sedantes.html))\n # PROBLEMAS\n 1. Procesamiento masivo de Artículos científicos\n2. Identificación automática de medicamentos\n3. Identificación automática de síntomas\n4. Identificación automática de enfermedades\n5. Identificación automática de trastornos\n6. Descubrimiento de relaciones:\n1. medicamento-vs-síntoma\n2. medicamento-vs-enfermedad\n3. medicamento-vs-trastorno\n # HIPÓTESIS\n La caracterización de medicamentos mediante síntomas, enfermedades y trastornos extraídos automáticamente de la literatura científica permitirá agrupar aquellos que estén relacionados.\n # METODOLOGÍA\n 1. Creación servicio identificación medicamentos y códigos ATC: [librairy.github.io/bio-nlp](http://librairy.github.io/bio-nlp)\n2. Desarrollo y ejecución de un anotador de enfermedades y medicamentos basado en modelos de identificación de entidades (NER). Anotación a dos niveles de profundidad: frase y artículo\n3. Construcción de modelos de agrupamiento global y jerárquico a partir de las representaciones de los medicamentos obtenidas con las anotaciones.\n4. Evaluación de los resultados obtenidos:\n4.1 Para 100 Grupos (0.436208445103141):\n![silouette2](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_2.png)\n4.2 Para 110 Grupos (0.4494331459873356):\n![silouette3](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_3.png)\n4.3 Para 120 Grupos (0.4576435692957037):\n![silouette4](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_4.png)\n4.4 Para 130 Grupos (0.4553701275038375):\n![silouette5](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_5.png)\n4.5 Para 140 Grupos (0.46024923069398316):\n![silouette6](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_6.png)\n5. Extracción de conocimiento a partir de los grupos de medicamentos obtenidos.\n # RESULTADOS\n 1. Anotaciones: 5.274.655 frases y 33.244 artículos\n1.1 Enfermedades (**scipacy_diseases_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_diseases_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_diseases_t)\n1.2 Síntomas (**annot_cliner_problems_t**): [librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_problems_t](http://librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_problems_t)\n1.3 Trastornos (**annot_cliner_treatments_t**): [librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_treatments_t](http://librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_treatments_t)\n1.4 Medicamentos\n1.4.1 sustancia química: (**scispacy_chemicals_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_chemicals_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_chemicals_t)\n1.4.2 principio activo (**bionlp_atc5_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc5_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc5_t)\n1.4.3 grupo terapeútico (**bionlp_atc4_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc4_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc4_t)\n1.4.4 grupo químico (**bionlp_atc3_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc3_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc3_t)\n1.2.5 grupo farmacológico (**bionlp_atc2_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc2_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc2_t)\n *{\n"id": "03bf182b7a71278632ae83ed10757096dfdad3b7-175",\n"text_t": "Furthermore, volunteer experiments demonstrate that astrovirus exposure generally leads to an increase in anti-astrovirus antibody titer.",\n"scispacy_diseases_complete_t": "astrovirus:52:62",\n"scispacy_diseases_t": "astrovirus",\n"scispacy_chemicals_t": "anti-astrovirus",\n"bionlp_atc2_t": "N04 D10",\n"bionlp_atc3_t": "H05B N06D",\n"bionlp_atc4_t": "L02BA N06DA H01CC D11AF N06DX",\n"bionlp_atc5_t": "J06BB01",\n"\*version\*": 1663037203902627840\n}*\n![annotations](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/annotations-donut2.png)\n 2. Distribución de los medicamentos a partir de las anotaciones:\n2.1 En espacio bi-dimensional:\n![bidimensional](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-bidimensional-latest.png)\n2.2. Por niveles:\n![dendrogram](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-dendrogram-latest.png)\n # CONCLUSIONES\n - Se han identificado 120 grupos de medicamentos de entre todos los mencionados en artículos publicados en CORD-19:\n![clustering](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-cluster-latest.png)\n- A partir de un medicamento, ya sea desde su nombre comercial, grupo farmacológico, terapeútico o principio activo, se pueden sugerir **medicamentos relacionados**.\nPor ejemplo, medicamentos relacionados con el Aciclovir (J05AB01) en este contexto son:\n- ketamine (N01AX03)\n- piperazine (P02CB01)\n- acefylline piperazine (R03DA09)\n- barium sulfate without suspending agents (V08BA02)\n- barium sulfate with suspending agents (V08BA01)\n- chlorhexidine (S01AX09, S03AA04, S02AA09, D09AA12, R02AA05, B05CA02, D08AC02, A01AB03)\n- chlorhexidine, combinations (D08AC52)\n- artesunate (P01BE03)\n- artesunate and pyronaridine (P01BF06)\n- amodiaquine (P01BA06)\n- Se pueden realizar **búsquedas basadas en enfermedades, síntomas, tratamientos o medicamentos** de los artículos científicos publicados en CORD-19.\nPor ejemplo, responder a la siguiente pregunta: ¿se han usado medicamentos que combinan actividad inmunosupresora y antimalárica con antibióticos macrólidos? ¿En qué documentos se mencionan, y relacionados con qué enfermedades? mediante la consulta: [librairy.linkeddata.es/solr/covid/select?fl=url_s, name_s, scispacy_diseases_t&q=labels4_t:J01FA AND labels5_t:P01BA02](https://librairy.linkeddata.es/solr/covid/select?fl=url_s%2C name_s%2C scispacy_diseases_t&q=labels4_t%3AJ01FA AND labels5_t%3AP01BA02) (ya que los medicamentos que combinan la actividad inmunosupresora y antimalárica tienen el principio activo P01BA02; los antibióticos macrólidos pertenecen al grupo terapeútico J01FA)\n- No todas las frases pertenecientes al corpus contienen entidades de relevancia, y en la gran mayoría solo aparece 1![Diseases,Chemicals, atcs2.png](https://taiga.vencealvirus.software.imdea.org/media/attachments/7/4/2/c/88032427ea5df8abb15780aed503ade41f27500d1dbe735178f6f96e8986/diseaseschemicals-atcs2.png#_taiga-refresh=wiki_page:1361)\n- No se detallan suficientes relaciones entre entidades a nivel de frase. Otras tareas adicionales como la identificación de correferencias para trabajar a nivel de párrafo y generación de nuevos modelos para el corpus específico se contemplan como líneas futuras'
-      },
+          info:{
+            motivation:{
+              title:'Motivación',
+              text:'Agrupar medicamentos relacionados en el tratamiento del COVID para poder utilizarlos en situaciones de desabastecimiento.'
+            },
+            problems:{
+              title:'Problemas',
+              text:'text',
+              lists:[[
+                {type:'value', text:'Procesamiento masivo de Artículos científicos'},
+                {type:'value', text:'Identificación automática de medicamentos'},
+                {type:'value', text:'Identificación automática de síntomas'},
+                {type:'value', text:'Identificación automática de enfermedades'},
+                {type:'value', text:'Identificación automática de trastornos'},
+
+              ], {
+                title:'Descubrimiento de relaciones:',
+                data:[
+                  {type:'value', text:'Medicamento vs Síntoma'},
+                  {type:'value', text:'Medicamento vs Enfermedad'},
+                  {type:'value', text:'Medicamento vs Trastorno'},
+                ]
+              }]
+
+            },
+            hypothesis:{
+              title:'Hipótesis',
+              text:'La caracterización de medicamentos mediante síntomas, enfermedades y trastornos extraídos automáticamente de la literatura científica permitirá agrupar aquellos que estén relacionados.'
+            },
+            methodology:{
+              title:'Metodología',
+              lists:[[
+                {type:'link', text:'Creación servicio identificación medicamentos y códigos ATC', link:'http://librairy.github.io/bio-nlp'},
+                {type:'value', text:'Desarrollo y ejecución de un anotador de enfermedades y medicamentos basado en modelos de identificación de entidades (NER). Anotación a dos niveles de profundidad: frase y artículo'},
+                {type:'value', text:'Construcción de modelos de agrupamiento global y jerárquico a partir de las representaciones de los medicamentos obtenidas con las anotaciones.'},
+              ], {
+                title:'Evaluación de los resultados obtenidos:',
+                data:[
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_2.png', text:'Para 100 Grupos (0.436208445103141)'},
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_3.png', text:'Para 110 Grupos (0.4494331459873356)'},
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_4.png', text:'Para 120 Grupos (0.4576435692957037)'},
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_5.png', text:'Para 130 Grupos (0.4553701275038375)'},
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_6.png', text:'Para 140 Grupos (0.46024923069398316)'}
+                ]
+              }]
+            },
+            results:{
+              title:'Resultados',
+              lists:[{
+                title:'Anotaciones: 5.274.655 frases y 33.244 artículos',
+                data:[
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_diseases_t', text:'Enfermedades (scipacy_diseases_t)'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_problems_t', text:'Síntomas (annot_cliner_problems_t)'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_treatments_t', text:'Trastornos (annot_cliner_treatments_t)'},
+                  {type:'title', text:'Medicamentos:'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_chemicals_t', text:'sustancia química: (scispacy_chemicals_t)'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc5_t', text:'principio activo (bionlp_atc5_t)'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc4_t', text:'grupo terapeútico (bionlp_atc4_t)'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc3_t', text:'grupo químico (bionlp_atc3_t)'},
+                  {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc2_t', text:'grupo farmacológico (bionlp_atc2_t)'},
+                  {type:'image', text:'',link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/annotations-donut2.png'}
+                ]
+              }, 
+              {
+                title:'Distribución de los medicamentos a partir de las anotaciones',
+                data:[
+                  {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-bidimensional-latest.png', text:'En espacio bi-dimensional'},
+                  {type:'image', link:'https://raw.githubusercontent.com/oeg-upm/drugs4covid19web/master/web/src/assets/approach/drugs-atc5-dendrogram-latest.png', text:'Por niveles'}
+                  ]
+              }]
+            },
+            conclusions:{
+              title:'Conclusiones',
+              lists:[[
+                {type:'image', link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-cluster-latest.png',text:'Se han identificado 120 grupos de medicamentos de entre todos los mencionados en artículos publicados en CORD-19'},
+                {type:'value', text:'A partir de un medicamento, ya sea desde su nombre comercial, grupo farmacológico, terapeútico o principio activo, se pueden sugerir medicamentos relacionados.'},
+                {type:'value', text:'Se pueden realizar búsquedas basadas en enfermedades, síntomas, tratamientos o medicamentos de los artículos científicos publicados en CORD-19.'},
+                {type:'link',caption:'(Los medicamentos que combinan la actividad inmunosupresora y antimalárica tienen el principio activo P01BA02; los antibióticos macrólidos pertenecen al grupo terapeútico J01FA)' , link:'https://librairy.linkeddata.es/solr/covid/select?fl=url_s%2C%20name_s%2C%20scispacy_diseases_t&q=labels4_t%3AJ01FA%20AND%20labels5_t%3AP01BA02', text:'Por ejemplo, responder a la siguiente pregunta: ¿se han usado medicamentos que combinan actividad inmunosupresora y antimalárica con antibióticos macrólidos? ¿En qué documentos se mencionan, y relacionados con qué enfermedades?'},
+                {type:'image', link:'https://taiga.vencealvirus.software.imdea.org/media/attachments/7/4/2/c/88032427ea5df8abb15780aed503ade41f27500d1dbe735178f6f96e8986/diseaseschemicals-atcs2.png#_taiga-refresh=wiki_page:1361', text:'No todas las frases pertenecientes al corpus contienen entidades de relevancia, y en la gran mayoría solo aparece 1'},
+                {type:'value', text:'No se detallan suficientes relaciones entre entidades a nivel de frase. Otras tareas adicionales como la identificación de correferencias para trabajar a nivel de párrafo y generación de nuevos modelos para el corpus específico se contemplan como líneas futuras'}
+              ], {
+                title:'Medicamentos relacionados con el Aciclovir (J05AB01) en este contexto',
+                data:[
+                  {type:'value', link:'', text:'ketamine (N01AX03)'},
+                  {type:'value', link:'', text:'piperazine (P02CB01)'},
+                  {type:'value', link:'', text:'acefylline piperazine (R03DA09)'},
+                  {type:'value', link:'', text:'barium sulfate without suspending agents (V08BA02)'},
+                  {type:'value', link:'', text:'barium sulfate with suspending agents (V08BA01)'},
+                  {type:'value', link:'', text:'chlorhexidine (S01AX09, S03AA04, S02AA09, D09AA12, R02AA05, B05CA02, D08AC02, A01AB03)'},
+                  {type:'value', link:'', text:'chlorhexidine, combinations (D08AC52)'},
+                  {type:'value', link:'', text:'artesunate (P01BE03)'},
+                  {type:'value', link:'', text:'artesunate and pyronaridine (P01BF06)'},
+                  {type:'value', link:'', text:'amodiaquine (P01BA06)'}
+                ]
+              }]
+            }
+          
+          }
+        },
       {
         step:3,
         title:'Validar', 
         content:'Revisar estas anotaciones con la ayuda de científicos ciudadanos.',
         source:'approach/medical_research.svg', 
-        md:'# MOTIVACIÓN\n Validar las frases extraídas de los artículos que tratan sobre el COVID-19 por ciudadanos con formación y conocimientos en Ciencias de la Salud.\n # PROBLEMAS\n Las palabras clave relacionadas con la enfermedad (síntomas, medicamentos, enfermedades y tratamientos) pueden aparecer en las frases en diferente orden y con un significado distinto, por lo que es difícil una interpretación automática.\n # HIPÓTESIS\n El conocimiento e interpretación de los ciudadanos con formación y conocimientos en Ciencias de la Salud será clave para validar las frases extraídas de los artículos científicos que realiza el procesamiento automático.\n # METODOLOGÍA\n 1. Se construirá un experimento de ciencia ciudadana, a modo de aplicación web, que permita a los usuarios con formción y conocimientos en ciencias de la salud validar las frases extraídas por el sistema de Inteligencia Artificial.\n2. Los datos de entrada del experimento serán las frases extraídas del procesamiento automático [(#1 corpus)](https://taiga.vencealvirus.software.imdea.org/project/ocorcho-salud-un-catalogo-de-medicamentos-usados-para-combatir-el-covid-19-segun-la-literatura-cientifica-y-aplicando-tecnicas-de-inteligencia-artificial-y-ciencia-ciudadana/wiki/1-corpus).\n3. En cumplimiento de la GDPR, se informará al usuario sobre cómo se van a tratar sus datos personales, derecho a creación de perfiles automáticos y derecho al borrado cuando el usuario lo estime adecuado. Además, los datos permanecerán en servidores debidamente securizados.\n4. Todos los datos en bruto ¿del experimento? se publicarán en abierto, anonimizando previamente el identificador del usuario.\n5. La aplicación permitirá:\n - Registrar usuarios y clasificarlos según perfil (médicos de familia, enfermeros, epidemiólogos, farmacéuticos, …). Dicha clasificación se realizará mediante la realización de un tutorial.\n- Se mostrará al usuario una frase extraída del corpus y marcará en ella los síntomas, medicamentos y posibles tratamientos. Ejemplo: [oeg-upm.github.io/drugs4covid19-cs](https://oeg-upm.github.io/drugs4covid19-cs/)\n- La aplicación registrará cada una de las palabras o grupos de palabras marcadas por los usuarios.\n- Los datos validados se enviarán a una API para su almacenamiento en una base de datos.\n- Se calculará un índice de confianza para cada usuario, basado en "gold standards" (tareas previamente validadas por los expertos).  \n\n # RESULTADOS\n - Conjunto y clasificación de los medicamentos adecuados para la enfermedad.\n- Conjunto y clasificación de los síntomas de la enfermedad.\n- Relación síntomas-medicamentos extraídos de las frases.\n- Relación medicamento-medicamento.\n- Relación medicamento-enfermedad.'
-    
+        info:{
+          motivation:{
+            title:'Motivación',
+            text:'Validar las frases extraídas de los artículos que tratan sobre el COVID-19 por ciudadanos con formación y conocimientos en Ciencias de la Salud.'
+          },
+          problems:{
+            title:'Problemas',
+            text:'Las palabras clave relacionadas con la enfermedad (síntomas, medicamentos, enfermedades y tratamientos) pueden aparecer en las frases en diferente orden y con un significado distinto, por lo que es difícil una interpretación automática.'
+          },
+          hypothesis:{
+            title:'Hipótesis',
+            text:'El conocimiento e interpretación de los ciudadanos con formación y conocimientos en Ciencias de la Salud será clave para validar las frases extraídas de los artículos científicos que realiza el procesamiento automático.'
+          },
+          methodology:{
+            title:'Metodología',
+            lists:[[
+              {type:'value', text:'Se construirá un experimento de ciencia ciudadana, a modo de aplicación web, que permita a los usuarios con formción y conocimientos en ciencias de la salud validar las frases extraídas por el sistema de Inteligencia Artificial.'},
+              {type:'value', text:'Los datos de entrada del experimento serán las frases extraídas del procesamiento automático.'},
+              {type:'value', text:'En cumplimiento de la GDPR, se informará al usuario sobre cómo se van a tratar sus datos personales, derecho a creación de perfiles automáticos y derecho al borrado cuando el usuario lo estime adecuado. Además, los datos permanecerán en servidores debidamente securizados.'},
+              {type:'value', text:'Todos los datos en bruto ¿del experimento? se publicarán en abierto, anonimizando previamente el identificador del usuario.'}
+            ],{
+              title:'La aplicación permitirá:',
+              data:[
+              {type:'value', text:'Registrar usuarios y clasificarlos según perfil (médicos de familia, enfermeros, epidemiólogos, farmacéuticos, …). Dicha clasificación se realizará mediante la realización de un tutorial'},
+              {type:'value', text:'Se mostrará al usuario una frase extraída del corpus y marcará en ella los síntomas, medicamentos y posibles tratamientos.'},
+              {type:'value', text:'La aplicación registrará cada una de las palabras o grupos de palabras marcadas por los usuarios.'},
+              {type:'value', text:'Los datos validados se enviarán a una API para su almacenamiento en una base de datos.'},
+              {type:'value', text:'Se calculará un índice de confianza para cada usuario, basado en "gold standards" (tareas previamente validadas por los expertos).'},
+              {type:'link', link:'https://oeg-upm.github.io/drugs4covid19-cs/', text:'Prueba aquí nuestro demo'}
+            ]}
+
+          ]
+          },
+          results:{
+            title:'Resultados',
+            lists:[[
+              {type:'value', text:'Conjunto y clasificación de los medicamentos adecuados para la enfermedad.'},
+              {type:'value', text:'Conjunto y clasificación de los síntomas de la enfermedad.'},
+              {type:'value', text:'Relación síntomas-medicamentos extraídos de las frases.'},
+              {type:'value', text:'Relación medicamento-medicamento.'},
+              {type:'value', text:'Relación medicamento-enfermedad.'},
+
+            ]]
+          },
+          conclusions:{
+          }
+        
+        }    
     },
     {
       step:4,
       title:'Publicar', 
       content:'Publicar un grafo de conocimientos con los datos que sean correctos.',
       source:'approach/kg.svg',
-      md:'# MOTIVACIÓN\n A partir del Corpus corpus CORD-19, un corpus actualizado de artículos científicos sobre COVID-19 se han generado varios repositorios orientados a documentos que pueden ser procesados y anotados automáticamente mediante su interfaz de acceso HTTP. El repositorio generado de frases de estos artículos contiene anotaciones acerca de enfermedades, síntomas y trastornos y tratamientos (códigos ATC) relacionados con el COVID-19. Actualmente existen diferentes repositorios de datos relacionados con estos aspectos que contienen una descripción detallada de atributos tales como todos los nombres con los que se conoce una medicina, efectos secundarios, entre otros. Se quiere entonces extender las anotaciones generadas inicialmente con aquellas generadas por este tipo de relaciones. Para que la información pueda ser explotada por tanto por personas vinculadas al ámbito sanitario como por el público en general, es necesario que las anotaciones estén alineadas a un vocabulario que describa este dominio del conocimiento. De esta manera, el repositorio original será transformado a un grafo de conocimiento (knowledge graph) mediante técnicas que trabajan con mappings (correspondencias) entre el repositorio de frases y el vocabulario desarrollado.\n # PROBLEMAS\n - Silos de información\n  - Fuentes de datos heterogéneas\n  - Diversidad de formatos y métodos de consulta\n  - Carencia de vocabularios consensuados\n # HIPÓTESIS\n Un punto de acceso único y unificado en forma de grafo permite recuperar información sobre los medicamentos y sus interacciones de forma más efectiva para los expertos.\n # METODOLOGÍA\n 1. Búsqueda y generación de fuentes de datos\n - Index solar 1\n  - Index solar 2\n 1. Búsqueda de fuentes de conocimiento relacionadas a enfermedades, síntomas y trastornos, tratamientos.\n  2. Explorar otros repositorios semánticos que han sido generados a partir de información de COVID-19 para ver la posibilidad de relacionar los grafos de conocimiento\n  3. Generación del vocabulario con reuso de ontologías asociadas a esas fuentes\n  4. Documentación y publicación del vocabulario\n  5. Mapeo de los datos al vocabulario\n  6. Generación del grafo de conocimiento alineado con vocabulario\n  7. Enriquecimiento del grafo con validaciones de expertos (ciencia ciudadana)\n  8. Publicación del grafo de conocimiento\n # RESULTADOS\n - Vocabulario [w3id.org/def/DRUGS4COVID19](https://w3id.org/def/DRUGS4COVID19)\n  - Knowledge graph: [github.com/oeg-upm/drugs4covid19-kg](https://github.com/oeg-upm/drugs4covid19-kg)\n  - Punto de consulta: [librairy.linkeddata.es/sparql](http://librairy.linkeddata.es/sparql)\n  - [Ejemplo de consulta](https://librairy.linkeddata.es/sparql?default-graph-uri=http%3A%2F%2Fdrugs4covid.com%2F542020&query=select+distinct+*+where+%7B%0D%0A%0D%0A%3Fs+a+%3Chttps%3A%2F%2Fw3id.org%2Fdef%2FDRUGS4COVID19%23Paper%3E.%0D%0A%3Fs+%3Chttps%3A%2F%2Fw3id.org%2Fdef%2FDRUGS4COVID19%2Fmenciona%3E+%3Fa+.%0D%0A%3Fa+%3Fp+%3Ft+.%0D%0A%0D%0A%7D+limit+10&should-sponge=&format=text%2Fhtml&timeout=0&debug=on&run=+Run+Query+)\n  # CONCLUSIONES\n Hemos integrado de forma estructurada la información sacada de las artículos científicos, sus anotaciones y además la hemos enriquecido con enlaces útiles para los expertos a fuentes externas. De esta manera, esta fuente de información única se puede utilizar para responder preguntas de forma rápida y sencilla.'
-    },
+      info:{
+        motivation:{
+          title:'Motivación',
+          text:"A partir del Corpus corpus CORD-19, un corpus actualizado de artículos científicos sobre COVID-19 se han generado varios repositorios orientados a documentos que pueden ser procesados y anotados automáticamente mediante su interfaz de acceso HTTP. El repositorio generado de frases de estos artículos contiene anotaciones acerca de enfermedades, síntomas y trastornos y tratamientos (códigos ATC) relacionados con el COVID-19. Actualmente existen diferentes repositorios de datos relacionados con estos aspectos que contienen una descripción detallada de atributos tales como todos los nombres con los que se conoce una medicina, efectos secundarios, entre otros. Se quiere entonces extender las anotaciones generadas inicialmente con aquellas generadas por este tipo de relaciones. Para que la información pueda ser explotada por tanto por personas vinculadas al ámbito sanitario como por el público en general, es necesario que las anotaciones estén alineadas a un vocabulario que describa este dominio del conocimiento. De esta manera, el repositorio original será transformado a un grafo de conocimiento (knowledge graph) mediante técnicas que trabajan con mappings (correspondencias) entre el repositorio de frases y el vocabulario desarrollado."
+        },
+        problems:{
+          title:'Problemas',
+          lists:[[
+            {type:'value', text:'Silos de información'},
+            {type:'value', text:'Fuentes de datos heterogéneas'},
+            {type:'value', text:'Diversidad de formatos y métodos de consulta'},
+            {type:'value', text:'Carencia de vocabularios consensuados'},
+          ]]
+
+        },
+        hypothesis:{
+          title:'Hipótesis',
+          text:'Un punto de acceso único y unificado en forma de grafo permite recuperar información sobre los medicamentos y sus interacciones de forma más efectiva para los expertos.'
+        },
+        methodology:{
+          title:'Metodología',
+          lists:[[
+            {type:'value', text:'Búsqueda y generación de fuentes de datos'},
+            {type:'value', text:'Búsqueda de fuentes de conocimiento relacionadas a enfermedades, síntomas y trastornos, tratamientos.'},
+            {type:'value', text:'Explorar otros repositorios semánticos que han sido generados a partir de información de COVID-19 para ver la posibilidad de relacionar los grafos de conocimiento.'},
+            {type:'value', text:'Generación del vocabulario con reuso de ontologías asociadas a esas fuentes.'},
+            {type:'value', text:'Documentación y publicación del vocabulario.'},
+            {type:'value', text:'Mapeo de los datos al vocabulario.'},
+            {type:'value', text:'Generación del grafo de conocimiento alineado con vocabulario.'},
+            {type:'value', text:'Enriquecimiento del grafo con validaciones de expertos (ciencia ciudadana).'},
+            {type:'value', text:'Publicación del grafo de conocimiento'}
+
+          ]]
+        },
+        results:{
+          title:'Resultados',
+          lists:[[
+            {type:'link', link:'https://w3id.org/def/DRUGS4COVID19', text:'Vocabulario'},
+            {type:'link', link:'https://github.com/oeg-upm/drugs4covid19-kg', text:'Knowledge graph'},
+            {type:'link', link:'http://librairy.linkeddata.es/sparql', text:'Punto de consulta'},
+            {type:'link', link:"https://librairy.linkeddata.es/sparql?default-graph-uri=http%3A%2F%2Fdrugs4covid.com%2F542020&query=select+distinct+*+where+%7B%0D%0A%0D%0A%3Fs+a+%3Chttps%3A%2F%2Fw3id.org%2Fdef%2FDRUGS4COVID19%23Paper%3E.%0D%0A%3Fs+%3Chttps%3A%2F%2Fw3id.org%2Fdef%2FDRUGS4COVID19%2Fmenciona%3E+%3Fa+.%0D%0A%3Fa+%3Fp+%3Ft+.%0D%0A%0D%0A%7D+limit+10&should-sponge=&format=text%2Fhtml&timeout=0&debug=on&run=+Run+Query+", text:'Ejemplo de consulta'},
+
+          ]]
+        },
+        conclusions:{
+          title:'Conclusiones',
+          text:'Hemos integrado de forma estructurada la información sacada de las artículos científicos, sus anotaciones y además la hemos enriquecido con enlaces útiles para los expertos a fuentes externas. De esta manera, esta fuente de información única se puede utilizar para responder preguntas de forma rápida y sencilla.'
+        }
+      
+      }    },
     ]
     },
     team:{
@@ -312,49 +562,171 @@ const languages= [
       title0:'Problem',
       title1:'Drugs in hospital pharmacy services are running low',
       text1:'With the increase in the number of patients affected by COVID-19 and admitted to Intensive Care Units throughout the world, the demand for the medicines necessary for their treatment has increased. Laboratories have increased production, and the Drug Agency itself recalls that the same active ingredient can be found in more than one trade name.\nFor years, a large amount of scientific literature has been generated, a great help and a problem for its exploration too.',
+      graph1:{
+        title:'Pharmacies without stock of a medicine',
+        subtitle:'Number of pharmacies without stock of a specific medicine from 2020-03-23 to 2020-03-29'
+      }
     }, 
     resources:{
       title0:'The solution becomes the problem',
       title1:'CORD-19',
       text1:'This scientific documentation is at the same time the problem. If a person wants to know the application or use of a drug in the treatment of COVID-19 or identify the relationships between drugs described in a protocol of action, they should navigate this large body of documentation where the drugs are mentioned with different names (active principle, trade name, therapeutic group... ). Sometimes the mention of a medicine informs about its possible use and in other cases it may be a phrase without relevance to this objective.',
-      graphtitle1:'The name of the medicine',
       title2:'Some Data:',
-      graphtitle2:'Differente languages',
-      graphtitle3:'Many sources to consult',
-      graphtitle4:'Different formats'
+      graph1:{
+        title:'Articles per year',
+        subtitle:'Number of published articles from 1970 to February 2020.',
+      },
+      graphtext1:'Many sources to consult.',
+      graphtext2:'The name of the medicine depends on the context.',            
     },
     approach:{
-      title0:'Our Approach', 
+      title0:'Our Approach',
+      text1:'How it works?',
       data:[
         {
             step:1,
             title:'Process', 
             content:'Process and index the article corpus, and all the sentences.',
             source:'approach/file_searching.svg', 
-            md:"# MOTIVACIÓN\nFacilitar el procesamiento automático de las publicaciones científicas disponibles en el corpus CORD-19.\n# PROBLEMAS\nEl corpus se distribuye en varias colecciones de documentos comprimidas (formato GZ) y un archivo con metainformación (formato CSV).\n# HIPÓTESIS\nAlmacenar los artículos en repositorios orientados a documentos permitirá que puedan ser procesados y anotados automáticamente mediante su interfaz de acceso HTTP.\n# METODOLOGÍA\n1. Descarga corpus CORD-19 (\npages.semanticscholar.org/coronavirus-research\n)\n1. Descarga metadatos en formato CSV\n2. Descarga artículos de la colección 'Commercial use subset' (16763 artículos en formato JSON)\n3. Descarga artículos de la colección 'Non-commercial use subset ' (4228 artículos en formato JSON)\n4. Descarga artículos de la colección 'Custom license subset ' (19171 artículos en formato JSON)\n5. Descarga artículos de la colección 'bioRxiv/medRxiv subset' (500 artículos en formato JSON)\n2. Creación índice en Solr para almacenar los artículos\n3. Desarrollo código Python para lectura de artículos y registro en índice en Solr\n4. Segmentación de artículos en frases\n5. Creación índice en Solr para almacenar los frases\n6. Desarrollo código Python para extracción de frases a partir del texto de los artículos y registro en índice en Solr\n7. Creación de visualizaciones estadísticas para la exploración de los artículos\n# RESULTADOS\n1. Repositorio de documentos: [librairy.linkeddata.es/data/#/covid/core-overview](http://librairy.linkeddata.es/data/#/covid/core-overview)\n2. Repositorio de frases: [librairy.linkeddata.es/data/#/covid-sentences/core-overview](http://librairy.linkeddata.es/data/#/covid-sentences/core-overview)\n3. Visualización Repositorio (código GIST 4f726911fd9908ffc3a46837b15d8011): [librairy.linkeddata.es/data/dashboard](https://librairy.linkeddata.es/data/dashboard)\n4. Exploración guiada por artículos relacionados a partir de su contenido y sus anotaciones: [librairy.github.io/covid19/explorer.html](https://librairy.github.io/covid19/explorer.html)\n5. Código Python indexado: [github.com/librairy/covid19/blob/master/parallel-index-articles.py](https://github.com/librairy/covid19/blob/master/parallel-index-articles.py)\n# CONCLUSIONES\n1. 33.244 artículos indexados\n2. 5.298.063 frases extraídas automáticamente"
+            info:{
+              motivation:{
+                title:'',
+                text:''
+              },
+              problems:{
+                title:'',
+                text:'',
+                lists:[]
+
+              },
+              hypothesis:{
+                title:'',
+                text:''
+              },
+              methodology:{
+                title:'',
+                lists:[]
+              },
+              results:{
+                title:'',
+                lists:[]
+              },
+              conclusions:{
+                title:'',
+                statistics:[],
+                text:''
+              }
+            
+            }
         }, 
         {
           step:2,
           title:'Classify', 
           content:'Annotate each article and each sentence with the processed information.',
           source:'approach/annotation.svg', 
-          md:'# MOTIVACIÓN\n Agrupar medicamentos relacionados en el tratamiento del COVID para poder utilizarlos en situaciones de desabastecimiento ([noticia prensa](https://elpais.com/sociedad/2020-03-31/las-uci-recurren-a-farmacos-en-desuso-ante-la-escasez-de-sedantes.html))\n # PROBLEMAS\n 1. Procesamiento masivo de Artículos científicos\n2. Identificación automática de medicamentos\n3. Identificación automática de síntomas\n4. Identificación automática de enfermedades\n5. Identificación automática de trastornos\n6. Descubrimiento de relaciones:\n1. medicamento-vs-síntoma\n2. medicamento-vs-enfermedad\n3. medicamento-vs-trastorno\n # HIPÓTESIS\n La caracterización de medicamentos mediante síntomas, enfermedades y trastornos extraídos automáticamente de la literatura científica permitirá agrupar aquellos que estén relacionados.\n # METODOLOGÍA\n 1. Creación servicio identificación medicamentos y códigos ATC: [librairy.github.io/bio-nlp](http://librairy.github.io/bio-nlp)\n2. Desarrollo y ejecución de un anotador de enfermedades y medicamentos basado en modelos de identificación de entidades (NER). Anotación a dos niveles de profundidad: frase y artículo\n3. Construcción de modelos de agrupamiento global y jerárquico a partir de las representaciones de los medicamentos obtenidas con las anotaciones.\n4. Evaluación de los resultados obtenidos:\n4.1 Para 100 Grupos (0.436208445103141):\n![silouette2](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_2.png)\n4.2 Para 110 Grupos (0.4494331459873356):\n![silouette3](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_3.png)\n4.3 Para 120 Grupos (0.4576435692957037):\n![silouette4](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_4.png)\n4.4 Para 130 Grupos (0.4553701275038375):\n![silouette5](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_5.png)\n4.5 Para 140 Grupos (0.46024923069398316):\n![silouette6](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/silouette-latest_6.png)\n5. Extracción de conocimiento a partir de los grupos de medicamentos obtenidos.\n # RESULTADOS\n 1. Anotaciones: 5.274.655 frases y 33.244 artículos\n1.1 Enfermedades (**scipacy_diseases_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_diseases_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_diseases_t)\n1.2 Síntomas (**annot_cliner_problems_t**): [librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_problems_t](http://librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_problems_t)\n1.3 Trastornos (**annot_cliner_treatments_t**): [librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_treatments_t](http://librairy.linkeddata.es/data/covid/terms?terms.fl=annot_cliner_treatments_t)\n1.4 Medicamentos\n1.4.1 sustancia química: (**scispacy_chemicals_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_chemicals_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=scispacy_chemicals_t)\n1.4.2 principio activo (**bionlp_atc5_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc5_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc5_t)\n1.4.3 grupo terapeútico (**bionlp_atc4_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc4_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc4_t)\n1.4.4 grupo químico (**bionlp_atc3_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc3_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc3_t)\n1.2.5 grupo farmacológico (**bionlp_atc2_t**): [librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc2_t](http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc2_t)\n *{\n"id": "03bf182b7a71278632ae83ed10757096dfdad3b7-175",\n"text_t": "Furthermore, volunteer experiments demonstrate that astrovirus exposure generally leads to an increase in anti-astrovirus antibody titer.",\n"scispacy_diseases_complete_t": "astrovirus:52:62",\n"scispacy_diseases_t": "astrovirus",\n"scispacy_chemicals_t": "anti-astrovirus",\n"bionlp_atc2_t": "N04 D10",\n"bionlp_atc3_t": "H05B N06D",\n"bionlp_atc4_t": "L02BA N06DA H01CC D11AF N06DX",\n"bionlp_atc5_t": "J06BB01",\n"\*version\*": 1663037203902627840\n}*\n![annotations](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/annotations-donut2.png)\n 2. Distribución de los medicamentos a partir de las anotaciones:\n2.1 En espacio bi-dimensional:\n![bidimensional](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-bidimensional-latest.png)\n2.2. Por niveles:\n![dendrogram](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-dendrogram-latest.png)\n # CONCLUSIONES\n - Se han identificado 120 grupos de medicamentos de entre todos los mencionados en artículos publicados en CORD-19:\n![clustering](https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/drugs-atc5-cluster-latest.png)\n- A partir de un medicamento, ya sea desde su nombre comercial, grupo farmacológico, terapeútico o principio activo, se pueden sugerir **medicamentos relacionados**.\nPor ejemplo, medicamentos relacionados con el Aciclovir (J05AB01) en este contexto son:\n- ketamine (N01AX03)\n- piperazine (P02CB01)\n- acefylline piperazine (R03DA09)\n- barium sulfate without suspending agents (V08BA02)\n- barium sulfate with suspending agents (V08BA01)\n- chlorhexidine (S01AX09, S03AA04, S02AA09, D09AA12, R02AA05, B05CA02, D08AC02, A01AB03)\n- chlorhexidine, combinations (D08AC52)\n- artesunate (P01BE03)\n- artesunate and pyronaridine (P01BF06)\n- amodiaquine (P01BA06)\n- Se pueden realizar **búsquedas basadas en enfermedades, síntomas, tratamientos o medicamentos** de los artículos científicos publicados en CORD-19.\nPor ejemplo, responder a la siguiente pregunta: ¿se han usado medicamentos que combinan actividad inmunosupresora y antimalárica con antibióticos macrólidos? ¿En qué documentos se mencionan, y relacionados con qué enfermedades? mediante la consulta: [librairy.linkeddata.es/solr/covid/select?fl=url_s, name_s, scispacy_diseases_t&q=labels4_t:J01FA AND labels5_t:P01BA02](https://librairy.linkeddata.es/solr/covid/select?fl=url_s%2C name_s%2C scispacy_diseases_t&q=labels4_t%3AJ01FA AND labels5_t%3AP01BA02) (ya que los medicamentos que combinan la actividad inmunosupresora y antimalárica tienen el principio activo P01BA02; los antibióticos macrólidos pertenecen al grupo terapeútico J01FA)\n- No todas las frases pertenecientes al corpus contienen entidades de relevancia, y en la gran mayoría solo aparece 1![Diseases,Chemicals, atcs2.png](https://taiga.vencealvirus.software.imdea.org/media/attachments/7/4/2/c/88032427ea5df8abb15780aed503ade41f27500d1dbe735178f6f96e8986/diseaseschemicals-atcs2.png#_taiga-refresh=wiki_page:1361)\n- No se detallan suficientes relaciones entre entidades a nivel de frase. Otras tareas adicionales como la identificación de correferencias para trabajar a nivel de párrafo y generación de nuevos modelos para el corpus específico se contemplan como líneas futuras'
-      },
+          info:{
+            motivation:{
+              title:'',
+              text:''
+            },
+            problems:{
+              title:'',
+              text:'',
+              lists:[]
+
+            },
+            hypothesis:{
+              title:'',
+              text:''
+            },
+            methodology:{
+              title:'',
+              lists:[]
+            },
+            results:{
+              title:'',
+              lists:[]
+            },
+            conclusions:{
+              title:'',
+              statistics:[],
+              text:''
+            }
+          
+          }
+      }, 
       {
         step:3,
         title:'Validate', 
         content:'Review these notes with the help of citizen scientists.',
         source:'approach/medical_research.svg', 
-        md:'# MOTIVACIÓN\n Validar las frases extraídas de los artículos que tratan sobre el COVID-19 por ciudadanos con formación y conocimientos en Ciencias de la Salud.\n # PROBLEMAS\n Las palabras clave relacionadas con la enfermedad (síntomas, medicamentos, enfermedades y tratamientos) pueden aparecer en las frases en diferente orden y con un significado distinto, por lo que es difícil una interpretación automática.\n # HIPÓTESIS\n El conocimiento e interpretación de los ciudadanos con formación y conocimientos en Ciencias de la Salud será clave para validar las frases extraídas de los artículos científicos que realiza el procesamiento automático.\n # METODOLOGÍA\n 1. Se construirá un experimento de ciencia ciudadana, a modo de aplicación web, que permita a los usuarios con formción y conocimientos en ciencias de la salud validar las frases extraídas por el sistema de Inteligencia Artificial.\n2. Los datos de entrada del experimento serán las frases extraídas del procesamiento automático [(#1 corpus)](https://taiga.vencealvirus.software.imdea.org/project/ocorcho-salud-un-catalogo-de-medicamentos-usados-para-combatir-el-covid-19-segun-la-literatura-cientifica-y-aplicando-tecnicas-de-inteligencia-artificial-y-ciencia-ciudadana/wiki/1-corpus).\n3. En cumplimiento de la GDPR, se informará al usuario sobre cómo se van a tratar sus datos personales, derecho a creación de perfiles automáticos y derecho al borrado cuando el usuario lo estime adecuado. Además, los datos permanecerán en servidores debidamente securizados.\n4. Todos los datos en bruto ¿del experimento? se publicarán en abierto, anonimizando previamente el identificador del usuario.\n5. La aplicación permitirá:\n - Registrar usuarios y clasificarlos según perfil (médicos de familia, enfermeros, epidemiólogos, farmacéuticos, …). Dicha clasificación se realizará mediante la realización de un tutorial.\n- Se mostrará al usuario una frase extraída del corpus y marcará en ella los síntomas, medicamentos y posibles tratamientos. Ejemplo: [oeg-upm.github.io/drugs4covid19-cs](https://oeg-upm.github.io/drugs4covid19-cs/)\n- La aplicación registrará cada una de las palabras o grupos de palabras marcadas por los usuarios.\n- Los datos validados se enviarán a una API para su almacenamiento en una base de datos.\n- Se calculará un índice de confianza para cada usuario, basado en "gold standards" (tareas previamente validadas por los expertos).  \n\n # RESULTADOS\n - Conjunto y clasificación de los medicamentos adecuados para la enfermedad.\n- Conjunto y clasificación de los síntomas de la enfermedad.\n- Relación síntomas-medicamentos extraídos de las frases.\n- Relación medicamento-medicamento.\n- Relación medicamento-enfermedad.'
-    
-    },
+        info:{
+          motivation:{
+            title:'',
+            text:''
+          },
+          problems:{
+            title:'',
+            text:'',
+            lists:[]
+
+          },
+          hypothesis:{
+            title:'',
+            text:''
+          },
+          methodology:{
+            title:'',
+            lists:[]
+          },
+          results:{
+            title:'',
+            lists:[]
+          },
+          conclusions:{
+            title:'',
+            statistics:[],
+            text:''
+          }
+        
+        }
+    }, 
     {
       step:4,
       title:'Publish', 
       content:'Publish a knowledge graph with the valid data.',
       source:'approach/kg.svg',
-      md:'# MOTIVACIÓN\n A partir del Corpus corpus CORD-19, un corpus actualizado de artículos científicos sobre COVID-19 se han generado varios repositorios orientados a documentos que pueden ser procesados y anotados automáticamente mediante su interfaz de acceso HTTP. El repositorio generado de frases de estos artículos contiene anotaciones acerca de enfermedades, síntomas y trastornos y tratamientos (códigos ATC) relacionados con el COVID-19. Actualmente existen diferentes repositorios de datos relacionados con estos aspectos que contienen una descripción detallada de atributos tales como todos los nombres con los que se conoce una medicina, efectos secundarios, entre otros. Se quiere entonces extender las anotaciones generadas inicialmente con aquellas generadas por este tipo de relaciones. Para que la información pueda ser explotada por tanto por personas vinculadas al ámbito sanitario como por el público en general, es necesario que las anotaciones estén alineadas a un vocabulario que describa este dominio del conocimiento. De esta manera, el repositorio original será transformado a un grafo de conocimiento (knowledge graph) mediante técnicas que trabajan con mappings (correspondencias) entre el repositorio de frases y el vocabulario desarrollado.\n # PROBLEMAS\n - Silos de información\n  - Fuentes de datos heterogéneas\n  - Diversidad de formatos y métodos de consulta\n  - Carencia de vocabularios consensuados\n # HIPÓTESIS\n Un punto de acceso único y unificado en forma de grafo permite recuperar información sobre los medicamentos y sus interacciones de forma más efectiva para los expertos.\n # METODOLOGÍA\n 1. Búsqueda y generación de fuentes de datos\n - Index solar 1\n  - Index solar 2\n 1. Búsqueda de fuentes de conocimiento relacionadas a enfermedades, síntomas y trastornos, tratamientos.\n  2. Explorar otros repositorios semánticos que han sido generados a partir de información de COVID-19 para ver la posibilidad de relacionar los grafos de conocimiento\n  3. Generación del vocabulario con reuso de ontologías asociadas a esas fuentes\n  4. Documentación y publicación del vocabulario\n  5. Mapeo de los datos al vocabulario\n  6. Generación del grafo de conocimiento alineado con vocabulario\n  7. Enriquecimiento del grafo con validaciones de expertos (ciencia ciudadana)\n  8. Publicación del grafo de conocimiento\n # RESULTADOS\n - Vocabulario [w3id.org/def/DRUGS4COVID19](https://w3id.org/def/DRUGS4COVID19)\n  - Knowledge graph: [github.com/oeg-upm/drugs4covid19-kg](https://github.com/oeg-upm/drugs4covid19-kg)\n  - Punto de consulta: [librairy.linkeddata.es/sparql](http://librairy.linkeddata.es/sparql)\n  - [Ejemplo de consulta](https://librairy.linkeddata.es/sparql?default-graph-uri=http%3A%2F%2Fdrugs4covid.com%2F542020&query=select+distinct+*+where+%7B%0D%0A%0D%0A%3Fs+a+%3Chttps%3A%2F%2Fw3id.org%2Fdef%2FDRUGS4COVID19%23Paper%3E.%0D%0A%3Fs+%3Chttps%3A%2F%2Fw3id.org%2Fdef%2FDRUGS4COVID19%2Fmenciona%3E+%3Fa+.%0D%0A%3Fa+%3Fp+%3Ft+.%0D%0A%0D%0A%7D+limit+10&should-sponge=&format=text%2Fhtml&timeout=0&debug=on&run=+Run+Query+)\n  # CONCLUSIONES\n Hemos integrado de forma estructurada la información sacada de las artículos científicos, sus anotaciones y además la hemos enriquecido con enlaces útiles para los expertos a fuentes externas. De esta manera, esta fuente de información única se puede utilizar para responder preguntas de forma rápida y sencilla.'
-    },
+      info:{
+        motivation:{
+          title:'',
+          text:''
+        },
+        problems:{
+          title:'',
+          text:'',
+          lists:[]
+
+        },
+        hypothesis:{
+          title:'',
+          text:''
+        },
+        methodology:{
+          title:'',
+          lists:[]
+        },
+        results:{
+          title:'',
+          lists:[]
+        },
+        conclusions:{
+          title:'',
+          statistics:[],
+          text:''
+        }
+      
+      }
+  } 
     ]
     },
     team:{
@@ -372,7 +744,7 @@ const teamData = [
     "source":"teamImages/Fotos/OscarCorcho.jpeg",
     "name": "Oscar Corcho",
     "role": "Promoter",
-    "group": "",
+    "group": "Support",
     "institution": "UPM",
     "twitter": "ocorcho",
     "github": "ocorcho",
@@ -383,7 +755,7 @@ const teamData = [
     "source":"teamImages/Fotos/asuncion.jpg",
     "name": "Asun Gómez-Pérez",
     "role": "Promoter",
-    "group": "",
+    "group": "Support",
     "institution": "UPM",
     "twitter": "asungomezperez",
     "github": "",
@@ -415,8 +787,8 @@ const teamData = [
   {
     "source":"teamImages/Fotos/luisPozo.png",
     "name": "Luis Pozo",
-    "role": "Web Developer",
-    "group": "Dev",
+    "role": "Developer",
+    "group": "DEV",
     "institution": "UPM",
     "twitter": "LuispozoDev",
     "github": "w0xter",
@@ -493,7 +865,7 @@ const teamData = [
   { "source":"teamImages/Fotos/VirginiadePablo.png",
     "name": "Virginia de Pablo",
     "role": "Comunicación",
-    "group": "",
+    "group": "Support",
     "institution": "UPM",
     "twitter": "v_depablo",
     "github": "",
@@ -503,7 +875,7 @@ const teamData = [
   { "source":"teamImages/Fotos/DanielBermejoSánchez.jpg",
     "name": "Daniel Bermejo Sánchez",
     "role": "Back End Programmer",
-    "group": "Dev",
+    "group": "CS",
     "institution": "UPM",
     "twitter": "",
     "github": "",
@@ -533,7 +905,7 @@ const teamData = [
   { "source":"teamImages/Fotos/SocorroBernardos.png",
     "name": "Socorro Bernardos Galindo",
     "role": "Ayuda en ontología y consultas",
-    "group": "",
+    "group": "KG",
     "institution": "UPM",
     "twitter": "",
     "github": "",
@@ -543,7 +915,7 @@ const teamData = [
   { "source":"teamImages/Fotos/EstebanGonzálezGuardia.jpeg",
     "name": "Esteban González Guardia",
     "role": "Frontend programmer",
-    "group": "CS (Citizen Science)",
+    "group": "CS",
     "institution": "UPM",
     "twitter": "eglezguardia",
     "github": "esgg",
@@ -553,7 +925,7 @@ const teamData = [
   { "source":"teamImages/Fotos/BeatrizLópezCenteno.jpg",
   "name": "Beatriz López Centeno",
   "role": "Hospital Pharmacist",
-  "group": "",
+  "group": "Support",
   "institution": "SERMAS",
   "twitter": "blopezcenteno",
   "github": "",
@@ -571,7 +943,7 @@ const teamData = [
 "email": "jutande@fi.upm.es"
 },
 { "source":"teamImages/Fotos/MaydadePabloLlorente.png",
-"name": "Mayda de Pablo",
+"name": "Mayda de Pablo Llorente",
 "role": "Support",
 "group": "Support",
 "institution": "",
@@ -588,8 +960,7 @@ const navText = [
     resources:'Resources',
     approach:'Approach',
     team:'Who Are We?',
-    btn:'ES',
-    path:'/'
+    lang:'ES'  
   },
   {
     introduction:'Introducción',
@@ -597,8 +968,7 @@ const navText = [
     resources:'Recursos',
     approach:'Nuestro Enfoque',
     team:'¿Quiénes Somos?',
-    btn:'EN',
-    path:'/EN'
+    lang:'EN'
   }
 ]
-export default {bar, pie, line, radar,donut, bubble, graph, graphConfig, approach, teamData, languages, navText}
+export default {MedicineStock, pie, ArticlesPerYear, radar,donut, bubble, graph, graphConfig, teamData, languages, navText, List}

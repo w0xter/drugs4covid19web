@@ -1,21 +1,20 @@
 import React from 'react'
-import logoMin from '../assets/logo.min.svg'
+import {Row, Col, Avatar,Typography} from 'antd'
+import {TwitterOutlined} from '@ant-design/icons'
+import logo from '../assets/logo.white.svg'
 export default function Footer(){
     return(
-        <div className="blueBg">
-            <div className="container-fluid">
-            <div className="row h-100 py-1">
-                <div className="col-6">
-                    <h6 className="title my-auto text-white text-left">
-                        2020
-                    </h6>
-                </div>
-                <div className="col-6 text-left align-self-bottom">
-                    <h6 className="title text-white my-auto float-right">DRUGS4COVID19</h6>
-                </div>
-            </div>
-            </div>
-
+        <div className="mt-xs-3 mt-md-5" style={{background:'#0b81aa'}}>
+            <Row justify="space-between" align="middle">
+                <Col xs={0} md={12}>
+                    <div className="m-2">
+                        <img src={logo} alt="DRUGS4COVID"   style={{ height: 50 }} className="img-fluid"/>
+                    </div>
+                </Col>
+                <Col xs={24} md={12}>
+                    <Avatar color="blue" icon={<TwitterOutlined/>}/>
+                </Col>
+            </Row>
         </div>
     )
 }
