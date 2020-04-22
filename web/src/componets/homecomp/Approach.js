@@ -1,6 +1,6 @@
 import React from 'react'
 import {Row, Col, Typography, Divider, List} from 'antd'
-import Card from '../Card'
+import ApproachCard from '../ApproachCard'
 const {Title} = Typography
 const  {Text} = Typography
 const {Paragraph} = Typography
@@ -15,7 +15,7 @@ export default function Approach(props){
         <div className="card-deck mt-5">
         {props.data.map((card) => {
             return(
-                    <Card data={card} buttonText={props.text.text1}></Card>
+                    <ApproachCard data={card} buttonText={props.text.text1}/>
             )
         })}
         </div>

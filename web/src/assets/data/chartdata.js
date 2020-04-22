@@ -393,7 +393,7 @@ const languages= [
                   {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc4_t', text:'grupo terapeútico (bionlp_atc4_t)'},
                   {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc3_t', text:'grupo químico (bionlp_atc3_t)'},
                   {type:'link', link:'http://librairy.linkeddata.es/data/covid-sentences/terms?terms.fl=bionlp_atc2_t', text:'grupo farmacológico (bionlp_atc2_t)'},
-                  {type:'json', text:'{"id": "03bf182b7a71278632ae83ed10757096dfdad3b7-175","text_t": "Furthermore, volunteer experiments demonstrate that astrovirus exposure generally leads to an increase in anti-astrovirus antibody titer.","scispacy_diseases_complete_t": "astrovirus:52:62","scispacy_diseases_t": "astrovirus","scispacy_chemicals_t": "anti-astrovirus","bionlp_atc2_t": "N04 D10","bionlp_atc3_t": "H05B N06D","bionlp_atc4_t": "L02BA N06DA H01CC D11AF N06DX","bionlp_atc5_t": "J06BB01","version": 1663037203902627840}'},
+                  {type:'json', text:'Ejemplo de respuesta',code:'{"id": "03bf182b7a71278632ae83ed10757096dfdad3b7-175","text_t": "Furthermore, volunteer experiments demonstrate that astrovirus exposure generally leads to an increase in anti-astrovirus antibody titer.","scispacy_diseases_complete_t": "astrovirus:52:62","scispacy_diseases_t": "astrovirus","scispacy_chemicals_t": "anti-astrovirus","bionlp_atc2_t": "N04 D10","bionlp_atc3_t": "H05B N06D","bionlp_atc4_t": "L02BA N06DA H01CC D11AF N06DX","bionlp_atc5_t": "J06BB01","version": 1663037203902627840}'},
                   {type:'image', text:'',link:'https://raw.githubusercontent.com/librairy/covid19/master/atc-codes/annotations-donut2.png'}
 
                 ]

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import CardTabs from './CardTabs'
+import CardTabs from './ApproachModal'
 import {Button} from 'antd'
 const images = require.context('../assets/', true);
 

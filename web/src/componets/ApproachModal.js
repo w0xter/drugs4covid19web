@@ -1,6 +1,6 @@
 import React from 'react'
 import {Tabs, Space, Row, Col, Typography, List, Statistic} from 'antd'
-
+import ImageModal from './ImageModal'
 const {Text}= Typography
 const {Title}= Typography
 const {Paragraph}= Typography
@@ -8,6 +8,7 @@ const {Paragraph}= Typography
 const {Tabpane} = Tabs
 
 const CustomList = ({data}) => {
+
 return(
     <div>
     { data.lists.map((list, idx) => {
@@ -27,20 +28,23 @@ return(
                         ):item.type === 'value' ?(
                         item.text
                         ):item.type === 'image' ? (
-                            <Space direction="vertical">
+                            <Space direction="vertical"> 
                             <Row justify="center">
                             <Col className="text-center">
-                                <Text>{item.text}</Text>        
+                                <Text strong style={{whiteSpace: "pre-line"}}>{item.text}</Text>        
                             </Col>
-                            </Row>  
+                            </Row>                              
                             <Row justify="center">
                                 <Col className="text-center">
-                                    <img src={item.link} className="img-fluid" alt={item.text} style={{maxHeight:200}}/>
+                                    <ImageModal image={item.link} title={item.text}/>
                                 </Col>
-                            </Row>   
+                            </Row>                              
                             </Space>                       
                         ):item.type === 'json' ?(
-                        <Text code>{item.text}</Text>
+                            <Space direction="vertical" size="small">
+                            <Text strong>{item.text}</Text>    
+                            <Paragraph code>{item.code}</Paragraph>
+                            </Space>
                         ):item.type === 'title' ?(
                             <Text strong>{item.text}</Text>
                         ):''}
@@ -69,7 +73,7 @@ export default class CardTabs extends React.Component{
     }
     render(){
         return(
-            <>
+            <div className="py-3">
             <Space direction="vertical" size="large">
                 <div>
                 <Title level={3}>
@@ -139,7 +143,7 @@ export default class CardTabs extends React.Component{
                     ):''
                 }
             </Space>
-            </>
+            </div>
         ) 
     }
    
