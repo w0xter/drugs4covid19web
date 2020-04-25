@@ -82,8 +82,7 @@ export default class CardTabs extends React.Component{
     }
     render(){
         return(
-            <div className="py-3" style={{maxWidth:'100!important'}}>
-            <Space direction="vertical" size="large">
+            <div className="py-3">
                 <div>
                 <Title level={3}>
                     {this.state.motivation.title}
@@ -104,7 +103,7 @@ export default class CardTabs extends React.Component{
                     </Paragraph>
                 )}
                 </div>
-                <div>
+                <div className="mt-3">
                 <Title level={3}>
                     {this.state.hypothesis.title}
                 </Title>
@@ -112,21 +111,25 @@ export default class CardTabs extends React.Component{
                     {this.state.hypothesis.text}
                 </Paragraph>
                 </div>
-                <div>
+                <div className="mt-3">
                 <Title level={3}>
                     {this.state.methodology.title}
                 </Title>
                 <CustomList data={this.state.methodology}></CustomList>
                 </div>
-                <div>
-                <Title level={3}>
-                    {this.state.results.title}
-                </Title>
-                <CustomList data={this.state.results}></CustomList>
-                </div>
+                {
+                    Object.keys(this.state.results).length !== 0?(
+                        <div className="mt-3">
+                        <Title level={3}>
+                            {this.state.results.title}
+                        </Title>
+                        <CustomList data={this.state.results}></CustomList>
+                        </div>
+                    ):''
+                }
                 {
                     Object.keys(this.state.conclusions).length !== 0 ? (
-                        <div>
+                        <div className="mt-3">
                         <Title level={3}>
                             {this.state.conclusions.title}
                         </Title>
@@ -151,7 +154,6 @@ export default class CardTabs extends React.Component{
                         </div>
                     ):''
                 }
-            </Space>
             </div>
         ) 
     }
